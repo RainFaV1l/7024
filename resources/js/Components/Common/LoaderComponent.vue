@@ -16,7 +16,8 @@ onMounted(() => {
             showLoader.value = false;
             showContent.value = true;
         }, 1000);
-    }, 5000);
+    }, 3000);
+
 });
 </script>
 

@@ -1,11 +1,11 @@
 <script setup>
-import CircleComponent from "@/Components/Сommon/CircleComponent.vue";
-import HeaderComponent from "@/Components/Сommon/HeaderComponent.vue";
+import CircleComponent from "@/Components/Common/CircleComponent.vue";
+import HeaderComponent from "@/Components/Common/HeaderComponent.vue";
 import gsap from "gsap";
-import SidebarComponent from "@/Components/Сommon/SidebarComponent.vue";
+import SidebarComponent from "@/Components/Common/SidebarComponent.vue";
 import {BuildingOfficeIcon, HomeModernIcon} from "@heroicons/vue/24/outline/index.js";
-import Project from "@/Components/Сommon/Project/Project.vue";
-import ProjectText from "@/Components/Сommon/Project/ProjectText.vue";
+import Project from "@/Components/Common/Project/Project.vue";
+import ProjectText from "@/Components/Common/Project/ProjectText.vue";
 
 const scrollToPreviousSection = () => {
     const container = document.querySelector('.animation-container');

@@ -1,8 +1,8 @@
 <script setup>
 import {Link} from '@inertiajs/vue3'
 import {CameraIcon, PhotoIcon, VideoCameraIcon, GlobeAltIcon} from "@heroicons/vue/24/outline/index.js";
-import ProjectIcon from "@/Components/Сommon/Project/ProjectIcon.vue";
-import ProjectItem from "@/Components/Сommon/Project/ProjectItem.vue";
+import ProjectIcon from "@/Components/Common/Project/ProjectIcon.vue";
+import ProjectItem from "@/Components/Common/Project/ProjectItem.vue";
 </script>
 
 <template>

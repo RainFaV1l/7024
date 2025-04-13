@@ -1,7 +1,6 @@
 <script setup>
 import {Head, usePage} from '@inertiajs/vue3'
-import Cursor from "@/Components/Сommon/Cursor.vue";
-import LoaderComponent from "@/Components/Сommon/LoaderComponent.vue";
+import LoaderComponent from "@/Components/Common/LoaderComponent.vue";
 
 
 
@@ -16,7 +15,6 @@ const page = usePage()
     </Head>
     <main>
         <LoaderComponent/>
-        <Cursor/>
         <slot></slot>
     </main>
 </template>

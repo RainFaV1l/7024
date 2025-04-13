@@ -1,59 +1,53 @@
 {
   "\u0000plugin-vue:export-helper": [
-    "/build/assets/loader-DCBBUGZT.mp4"
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/CircleComponent.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/CircleComponent.vue?vue&type=style&index=0&lang.css": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/HeaderComponent.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/LoaderComponent.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/Project/Project.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/Project/ProjectIcon.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/Project/ProjectItem.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/Project/ProjectText.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Common/SidebarComponent.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Components/Sections/CompaniesSection.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
+    "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Components/Sections/GroupSection.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/CircleComponent.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/CircleComponent.vue?vue&type=style&index=0&lang.css": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/Cursor.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/Cursor.vue?vue&type=style&index=0&lang.css": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/HeaderComponent.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/LoaderComponent.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/Project/Project.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/Project/ProjectIcon.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/Project/ProjectItem.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/Project/ProjectText.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
-  ],
-  "resources/js/Components/Сommon/SidebarComponent.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
+    "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Layouts/App.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
+    "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Pages/Index.vue": [
-    "/build/assets/loader-DCBBUGZT.mp4"
+    "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Pages/Index.vue?vue&type=style&index=0&lang.css": [
-    "/build/assets/loader-DCBBUGZT.mp4"
+    "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/assets/video/loader.mp4": [
-    "/build/assets/loader-DCBBUGZT.mp4"
+    "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/ssr.js": [
-    "/build/assets/loader-DCBBUGZT.mp4"
+    "/build/assets/loader-BnLZGpJd.mp4"
   ]
 }

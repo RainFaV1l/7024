@@ -97,5 +97,4 @@ a.hovered-link {
 body {
     cursor: none;
 }
-
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import ProjectIcon from "@/Components/Сommon/Project/ProjectIcon.vue";
+import ProjectIcon from "@/Components/Common/Project/ProjectIcon.vue";
 
 defineProps({
     name: {
