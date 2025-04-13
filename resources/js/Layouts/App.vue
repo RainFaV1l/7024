@@ -2,9 +2,6 @@
 import {Head, usePage} from '@inertiajs/vue3'
 import LoaderComponent from "@/Components/Common/LoaderComponent.vue";
 
-
-
-
 const page = usePage()
 </script>
 

@@ -1,5 +1,6 @@
 <script setup>
-import ProjectIcon from "@/Components/Common/Project/ProjectIcon.vue";
+import {Link} from '@inertiajs/vue3'
+import ServiceIcon from "@/Components/Common/Service/ServiceIcon.vue";
 
 defineProps({
     name: {
@@ -9,21 +10,26 @@ defineProps({
     description: {
         required: true,
         type: String,
+    },
+    link: {
+        required: true,
+        type: String,
     }
 })
 </script>
 
 <template>
-    <div
-        class="p-[40px] rounded-[7px] backdrop-blur-[100px] border border-white flex flex-col items-start gap-[20px] h-[290px] link item">
-       <ProjectIcon>
+    <Link :href="link"
+        class="p-[40px] rounded-[7px] backdrop-blur-[100px]
+        border border-white flex flex-col items-start gap-[20px] h-full item cursor-pointer">
+       <ServiceIcon>
            <slot/>
-       </ProjectIcon>
+       </ServiceIcon>
         <div class="flex flex-col gap-[10px]">
             <h2 class="text-[64px] uppercase text-white leading-[120%] opacity-80">{{ name }}</h2>
             <p class="text-white leading-[140%] tracking-[1.5px] opacity-80">{{ description }}</p>
         </div>
-    </div>
+    </Link>
 </template>
 
 <style scoped>

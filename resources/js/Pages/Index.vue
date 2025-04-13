@@ -1,6 +1,6 @@
 <script setup>
-import GroupSection from "@/Components/Sections/GroupSection.vue";
-import MainSection from "@/Components/Sections/CompaniesSection.vue";
+import GroupSection from "@/Components/Sections/Group/GroupSection.vue";
+import MainSection from "@/Components/Sections/Companies/CompaniesSection.vue";
 import gsap from 'gsap';
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import App from "@/Layouts/App.vue";
@@ -41,10 +41,9 @@ defineOptions({ layout: App })
 <style>
 html, body {
     margin: 0;
-    overflow: hidden; /* отключаем нативный скролл страницы */
+    overflow: hidden;
 }
 
-/* Скрытие скроллбара (опционально) */
 ::-webkit-scrollbar {
     display: none;
 }

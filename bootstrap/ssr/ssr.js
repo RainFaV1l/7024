@@ -1,5 +1,5 @@
-import { mergeProps, useSSRContext, withCtx, unref, createVNode, renderSlot, ref, onMounted, createSSRApp, h } from "vue";
-import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSlot, ssrInterpolate, ssrRenderAttr } from "vue/server-renderer";
+import { mergeProps, useSSRContext, withCtx, renderSlot, unref, createVNode, resolveDynamicComponent, createBlock, openBlock, ref, onMounted, createSSRApp, h } from "vue";
+import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSlot, ssrInterpolate, ssrRenderList, ssrRenderVNode, ssrRenderAttr } from "vue/server-renderer";
 import gsap from "gsap";
 import { CameraIcon, PhotoIcon, VideoCameraIcon, GlobeAltIcon, BuildingOfficeIcon, HomeModernIcon } from "@heroicons/vue/24/outline/index.js";
 import { Link, usePage, Head, createInertiaApp } from "@inertiajs/vue3";
@@ -109,210 +109,10 @@ const _sfc_main$7 = {
 const _sfc_setup$7 = _sfc_main$7.setup;
 _sfc_main$7.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Common/Project/ProjectIcon.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Common/Service/ProjectIcon.vue");
   return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
 };
 const _sfc_main$6 = {
-  __name: "ProjectItem",
-  __ssrInlineRender: true,
-  props: {
-    name: {
-      type: String,
-      required: true
-    }
-  },
-  setup(__props) {
-    return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex items-center gap-[15px]" }, _attrs))}>`);
-      ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
-      _push(`<p class="text-lg leading-[140%] text-white opacity-80 tracking-[1.5px]">${ssrInterpolate(__props.name)}</p></div>`);
-    };
-  }
-};
-const _sfc_setup$6 = _sfc_main$6.setup;
-_sfc_main$6.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Common/Project/ProjectItem.vue");
-  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
-};
-const _sfc_main$5 = {
-  __name: "Project",
-  __ssrInlineRender: true,
-  setup(__props) {
-    return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "p-[40px] h-[613px] rounded-[7px] backdrop-blur-[100px] border border-white flex flex-col items-start gap-[30px] link item" }, _attrs))} data-v-f58c42d9>`);
-      _push(ssrRenderComponent(_sfc_main$7, null, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(ssrRenderComponent(unref(CameraIcon), { class: "size-[26px] text-white" }, null, _parent2, _scopeId));
-          } else {
-            return [
-              createVNode(unref(CameraIcon), { class: "size-[26px] text-white" })
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`<h2 class="text-[64px] uppercase text-white leading-[120%]" data-v-f58c42d9>STUDIO 7024</h2><div class="flex flex-col gap-5" data-v-f58c42d9>`);
-      _push(ssrRenderComponent(unref(Link), { href: "/" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(ssrRenderComponent(_sfc_main$6, { name: "Монтаж" }, {
-              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
-                if (_push3) {
-                  _push3(ssrRenderComponent(_sfc_main$7, { size: 45 }, {
-                    default: withCtx((_3, _push4, _parent4, _scopeId3) => {
-                      if (_push4) {
-                        _push4(ssrRenderComponent(unref(PhotoIcon), { class: "size-[20px] text-white" }, null, _parent4, _scopeId3));
-                      } else {
-                        return [
-                          createVNode(unref(PhotoIcon), { class: "size-[20px] text-white" })
-                        ];
-                      }
-                    }),
-                    _: 1
-                  }, _parent3, _scopeId2));
-                } else {
-                  return [
-                    createVNode(_sfc_main$7, { size: 45 }, {
-                      default: withCtx(() => [
-                        createVNode(unref(PhotoIcon), { class: "size-[20px] text-white" })
-                      ]),
-                      _: 1
-                    })
-                  ];
-                }
-              }),
-              _: 1
-            }, _parent2, _scopeId));
-          } else {
-            return [
-              createVNode(_sfc_main$6, { name: "Монтаж" }, {
-                default: withCtx(() => [
-                  createVNode(_sfc_main$7, { size: 45 }, {
-                    default: withCtx(() => [
-                      createVNode(unref(PhotoIcon), { class: "size-[20px] text-white" })
-                    ]),
-                    _: 1
-                  })
-                ]),
-                _: 1
-              })
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(ssrRenderComponent(unref(Link), { href: "/" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(ssrRenderComponent(_sfc_main$6, { name: "Видеосъемка" }, {
-              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
-                if (_push3) {
-                  _push3(ssrRenderComponent(_sfc_main$7, { size: 45 }, {
-                    default: withCtx((_3, _push4, _parent4, _scopeId3) => {
-                      if (_push4) {
-                        _push4(ssrRenderComponent(unref(VideoCameraIcon), { class: "size-[20px] text-white" }, null, _parent4, _scopeId3));
-                      } else {
-                        return [
-                          createVNode(unref(VideoCameraIcon), { class: "size-[20px] text-white" })
-                        ];
-                      }
-                    }),
-                    _: 1
-                  }, _parent3, _scopeId2));
-                } else {
-                  return [
-                    createVNode(_sfc_main$7, { size: 45 }, {
-                      default: withCtx(() => [
-                        createVNode(unref(VideoCameraIcon), { class: "size-[20px] text-white" })
-                      ]),
-                      _: 1
-                    })
-                  ];
-                }
-              }),
-              _: 1
-            }, _parent2, _scopeId));
-          } else {
-            return [
-              createVNode(_sfc_main$6, { name: "Видеосъемка" }, {
-                default: withCtx(() => [
-                  createVNode(_sfc_main$7, { size: 45 }, {
-                    default: withCtx(() => [
-                      createVNode(unref(VideoCameraIcon), { class: "size-[20px] text-white" })
-                    ]),
-                    _: 1
-                  })
-                ]),
-                _: 1
-              })
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(ssrRenderComponent(unref(Link), { href: "/" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(ssrRenderComponent(_sfc_main$6, { name: "Разработка сайтов" }, {
-              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
-                if (_push3) {
-                  _push3(ssrRenderComponent(_sfc_main$7, { size: 45 }, {
-                    default: withCtx((_3, _push4, _parent4, _scopeId3) => {
-                      if (_push4) {
-                        _push4(ssrRenderComponent(unref(GlobeAltIcon), { class: "size-[20px] text-white" }, null, _parent4, _scopeId3));
-                      } else {
-                        return [
-                          createVNode(unref(GlobeAltIcon), { class: "size-[20px] text-white" })
-                        ];
-                      }
-                    }),
-                    _: 1
-                  }, _parent3, _scopeId2));
-                } else {
-                  return [
-                    createVNode(_sfc_main$7, { size: 45 }, {
-                      default: withCtx(() => [
-                        createVNode(unref(GlobeAltIcon), { class: "size-[20px] text-white" })
-                      ]),
-                      _: 1
-                    })
-                  ];
-                }
-              }),
-              _: 1
-            }, _parent2, _scopeId));
-          } else {
-            return [
-              createVNode(_sfc_main$6, { name: "Разработка сайтов" }, {
-                default: withCtx(() => [
-                  createVNode(_sfc_main$7, { size: 45 }, {
-                    default: withCtx(() => [
-                      createVNode(unref(GlobeAltIcon), { class: "size-[20px] text-white" })
-                    ]),
-                    _: 1
-                  })
-                ]),
-                _: 1
-              })
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</div></div>`);
-    };
-  }
-};
-const _sfc_setup$5 = _sfc_main$5.setup;
-_sfc_main$5.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Common/Project/Project.vue");
-  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
-};
-const Project = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-f58c42d9"]]);
-const _sfc_main$4 = {
   __name: "ProjectText",
   __ssrInlineRender: true,
   props: {
@@ -344,13 +144,145 @@ const _sfc_main$4 = {
     };
   }
 };
+const _sfc_setup$6 = _sfc_main$6.setup;
+_sfc_main$6.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Common/Service/ProjectText.vue");
+  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
+};
+const ProjectText = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-2960074f"]]);
+const _sfc_main$5 = {
+  __name: "ProjectItem",
+  __ssrInlineRender: true,
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex items-center gap-[15px]" }, _attrs))}>`);
+      ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
+      _push(`<p class="text-lg leading-[140%] text-white opacity-80 tracking-[1.5px]">${ssrInterpolate(__props.name)}</p></div>`);
+    };
+  }
+};
+const _sfc_setup$5 = _sfc_main$5.setup;
+_sfc_main$5.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Common/Service/ProjectItem.vue");
+  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
+};
+const _sfc_main$4 = {
+  __name: "Service",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const projects = [
+      {
+        id: 1,
+        name: "Монтаж",
+        icon: PhotoIcon,
+        link: "/"
+      },
+      {
+        id: 2,
+        name: "Видеосъемка",
+        icon: VideoCameraIcon,
+        link: "/"
+      },
+      {
+        id: 3,
+        name: "Разработка сайтов",
+        icon: GlobeAltIcon,
+        link: "/"
+      }
+    ];
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "p-[40px] h-[613px] rounded-[7px] backdrop-blur-[100px] border border-white flex flex-col items-start gap-[30px] item" }, _attrs))} data-v-eb2a56fc>`);
+      _push(ssrRenderComponent(_sfc_main$7, null, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(ssrRenderComponent(unref(CameraIcon), { class: "size-[26px] text-white" }, null, _parent2, _scopeId));
+          } else {
+            return [
+              createVNode(unref(CameraIcon), { class: "size-[26px] text-white" })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`<h2 class="text-[64px] uppercase text-white leading-[120%]" data-v-eb2a56fc>STUDIO 7024</h2><div class="flex flex-col gap-5" data-v-eb2a56fc><!--[-->`);
+      ssrRenderList(projects, (item) => {
+        _push(`<div data-v-eb2a56fc>`);
+        _push(ssrRenderComponent(unref(Link), {
+          href: item.link
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(ssrRenderComponent(_sfc_main$5, {
+                name: item.name
+              }, {
+                default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                  if (_push3) {
+                    _push3(ssrRenderComponent(_sfc_main$7, { size: 45 }, {
+                      default: withCtx((_3, _push4, _parent4, _scopeId3) => {
+                        if (_push4) {
+                          ssrRenderVNode(_push4, createVNode(resolveDynamicComponent(item.icon), { class: "size-[20px] text-white" }, null), _parent4, _scopeId3);
+                        } else {
+                          return [
+                            (openBlock(), createBlock(resolveDynamicComponent(item.icon), { class: "size-[20px] text-white" }))
+                          ];
+                        }
+                      }),
+                      _: 2
+                    }, _parent3, _scopeId2));
+                  } else {
+                    return [
+                      createVNode(_sfc_main$7, { size: 45 }, {
+                        default: withCtx(() => [
+                          (openBlock(), createBlock(resolveDynamicComponent(item.icon), { class: "size-[20px] text-white" }))
+                        ]),
+                        _: 2
+                      }, 1024)
+                    ];
+                  }
+                }),
+                _: 2
+              }, _parent2, _scopeId));
+            } else {
+              return [
+                createVNode(_sfc_main$5, {
+                  name: item.name
+                }, {
+                  default: withCtx(() => [
+                    createVNode(_sfc_main$7, { size: 45 }, {
+                      default: withCtx(() => [
+                        (openBlock(), createBlock(resolveDynamicComponent(item.icon), { class: "size-[20px] text-white" }))
+                      ]),
+                      _: 2
+                    }, 1024)
+                  ]),
+                  _: 2
+                }, 1032, ["name"])
+              ];
+            }
+          }),
+          _: 2
+        }, _parent));
+        _push(`</div>`);
+      });
+      _push(`<!--]--></div></div>`);
+    };
+  }
+};
 const _sfc_setup$4 = _sfc_main$4.setup;
 _sfc_main$4.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Common/Project/ProjectText.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Common/Service/Service.vue");
   return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
 };
-const ProjectText = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-2960074f"]]);
+const ProjectsComponent = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-eb2a56fc"]]);
 const _sfc_main$3 = {
   __name: "CompaniesSection",
   __ssrInlineRender: true,
@@ -377,7 +309,7 @@ const _sfc_main$3 = {
       _push(`<div class="flex justify-between">`);
       _push(ssrRenderComponent(_sfc_main$8, { click: scrollToPreviousSection }, null, _parent));
       _push(`<div class="grid grid-cols-3 p-[40px] gap-[30px]">`);
-      _push(ssrRenderComponent(Project, null, null, _parent));
+      _push(ssrRenderComponent(ProjectsComponent, null, null, _parent));
       _push(`<div class="col-span-2 flex flex-col gap-[30px]">`);
       _push(ssrRenderComponent(ProjectText, {
         description: "Проектирование и строительство зданий и сооружений",
