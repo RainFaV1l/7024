@@ -8,14 +8,14 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Index', [
+        return Inertia::render('Index/Index', [
             'title' => 'GROUP 7024'
         ]);
     }
 
     public function studio()
     {
-        return Inertia::render('Development', [
+        return Inertia::render('Studio/Studio', [
             'title' => 'STUDIO 7024'
         ]);
     }

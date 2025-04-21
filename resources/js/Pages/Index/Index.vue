@@ -1,9 +1,13 @@
 <script setup>
-import GroupSection from "@/Components/Sections/Group/GroupSection.vue";
-import MainSection from "@/Components/Sections/Companies/CompaniesSection.vue";
+import GroupSection from "@/Pages/Index/Components/GroupSection.vue";
+import MainSection from "@/Pages/Index/Components/CompaniesSection.vue";
 import gsap from 'gsap';
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import App from "@/Layouts/App.vue";
+import { usePage } from '@inertiajs/vue3'
+import {computed} from "vue";
+
+const page = usePage()
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -37,14 +41,3 @@ defineOptions({ layout: App })
         </section>
     </div>
 </template>
-
-<style>
-html, body {
-    margin: 0;
-    overflow: hidden;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-</style>

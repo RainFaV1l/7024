@@ -1,7 +1,7 @@
 <script setup>
 import {Link} from '@inertiajs/vue3'
-import ServiceIcon from "@/Components/Common/Service/ServiceIcon.vue";
-import ServiceItem from "@/Components/Common/Service/ServiceItem.vue";
+import ServiceIcon from "@/Components/Service/ServiceIcon.vue";
+import ServiceItem from "@/Components/Service/ServiceItem.vue";
 
 defineProps({
     link: {

@@ -1,11 +1,11 @@
 <script setup>
-import CircleComponent from "@/Components/Common/CircleComponent.vue";
-import TitleComponent from "@/Components/Sections/Group/TitleComponent.vue";
+import Circle from "@/Components/Circle.vue";
+import TitleComponent from "@/Pages/Index/Components/TitleComponent.vue";
 </script>
 
 <template>
     <section class="relative h-dvh bg-dark overflow-hidden section">
-        <CircleComponent/>
+        <Circle/>
         <div class="flex justify-center items-center h-full z-10">
             <TitleComponent title="GROUP 7024" subtitle="Необыкновенно"/>
         </div>

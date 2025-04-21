@@ -2,8 +2,7 @@
 defineProps({
     click: {
         type: Function,
-        required: false,
-        default: '/'
+        required: true,
     }
 })
 </script>
@@ -19,7 +18,7 @@ defineProps({
             </div>
             <div
                 class="text-white text-lg uppercase tracking-[1.5px] opacity-80
-                whitespace-nowrap transform -rotate-90 -ml-14 mt-12"
+                whitespace-nowrap transform -rotate-90 -ml-14 mt-12 cursor-pointer"
                 @click="click">GROUP 7024
             </div>
         </div>

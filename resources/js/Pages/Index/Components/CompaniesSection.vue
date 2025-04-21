@@ -1,8 +1,8 @@
 <script setup>
-import CircleComponent from "@/Components/Common/CircleComponent.vue";
-import HeaderComponent from "@/Components/Common/HeaderComponent.vue";
+import Circle from "@/Components/Circle.vue";
+import HeaderComponent from "@/Components/HeaderComponent.vue";
 import gsap from "gsap";
-import SidebarComponent from "@/Components/Common/SidebarComponent.vue";
+import Sidebar from "@/Components/Sidebar.vue";
 import {
     BuildingOfficeIcon, CameraIcon,
     GlobeAltIcon,
@@ -10,8 +10,8 @@ import {
     PhotoIcon,
     VideoCameraIcon
 } from "@heroicons/vue/24/outline/index.js";
-import ServiceText from "@/Components/Common/Service/ServiceText.vue";
-import Service from "@/Components/Common/Service/Service.vue";
+import ServiceText from "@/Components/Service/ServiceText.vue";
+import Service from "@/Components/Service/Service.vue";
 
 const services = [
     {
@@ -55,16 +55,16 @@ const scrollToPreviousSection = () => {
 
 <template>
     <section class="relative h-dvh bg-dark overflow-hidden section">
-        <CircleComponent/>
+        <Circle/>
         <div class="z-10 h-full">
             <HeaderComponent :click="scrollToPreviousSection"/>
             <div class="flex justify-between h-full">
-                <SidebarComponent :click="scrollToPreviousSection"/>
+                <Sidebar :click="scrollToPreviousSection"/>
                 <div class="grid grid-cols-3 p-[40px] gap-[30px] h-[87%] w-full">
-                    <Service link="/7024/studio" :services="services" :icon="CameraIcon"/>
+                    <Service link="/studio" :services="services" :icon="CameraIcon"/>
                     <div class="col-span-2 flex flex-col gap-[30px]">
-                        <ServiceText link="/7024/dilesta" description="Проектирование и строительство зданий и сооружений" name="DILESTA"><BuildingOfficeIcon class="size-[26px] text-white"/></ServiceText>
-                        <ServiceText link="/7024/module" description="Строительство модульных зданий" name="MODULE"><HomeModernIcon class="size-[26px] text-white"/></ServiceText>
+                        <ServiceText link="/dilesta" description="Проектирование и строительство зданий и сооружений" name="DILESTA"><BuildingOfficeIcon class="size-[26px] text-white"/></ServiceText>
+                        <ServiceText link="/module" description="Строительство модульных зданий" name="MODULE"><HomeModernIcon class="size-[26px] text-white"/></ServiceText>
                     </div>
                 </div>
             </div>

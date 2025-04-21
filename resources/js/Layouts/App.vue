@@ -1,6 +1,6 @@
 <script setup>
 import {Head, usePage} from '@inertiajs/vue3'
-import LoaderComponent from "@/Components/Common/LoaderComponent.vue";
+import Loader from "@/Components/Loader.vue";
 
 const page = usePage()
 </script>
@@ -11,11 +11,22 @@ const page = usePage()
         <meta name="description" content="Your page description">
     </Head>
     <main>
-        <LoaderComponent/>
+        <Loader/>
         <slot></slot>
     </main>
 </template>
 
 <style>
+::-webkit-scrollbar {
+    width: 8px;
+}
 
+::-webkit-scrollbar-track {
+    background-color: #26272C;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+}
 </style>

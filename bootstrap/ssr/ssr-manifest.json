@@ -14,34 +14,46 @@
   "resources/js/Components/Common/LoaderComponent.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
-  "resources/js/Components/Common/Project/ProjectIcon.vue": [
+  "resources/js/Components/Common/Service/Service.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
-  "resources/js/Components/Common/Project/ProjectItem.vue": [
+  "resources/js/Components/Common/Service/ServiceIcon.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
-  "resources/js/Components/Common/Project/ProjectText.vue": [
+  "resources/js/Components/Common/Service/ServiceItem.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
-  "resources/js/Components/Common/Project/ProjectsComponent.vue": [
+  "resources/js/Components/Common/Service/ServiceText.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Components/Common/SidebarComponent.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
-  "resources/js/Components/Sections/CompaniesSection.vue": [
+  "resources/js/Components/Sections/Companies/CompaniesSection.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
-  "resources/js/Components/Sections/GroupSection.vue": [
+  "resources/js/Components/Sections/Group/GroupSection.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Components/Sections/Group/TitleComponent.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Layouts/App.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Pages/Development.vue": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Pages/Errors/Error.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Pages/Index.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/Pages/Index.vue?vue&type=style&index=0&lang.css": [
+    "/build/assets/loader-BnLZGpJd.mp4"
+  ],
+  "resources/js/Pages/Studio.vue": [
     "/build/assets/loader-BnLZGpJd.mp4"
   ],
   "resources/js/assets/video/loader.mp4": [
