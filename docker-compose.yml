@@ -17,8 +17,8 @@ services:
         container_name: group7024-db
         environment:
             POSTGRES_DB: group7024     # Имя базы данных
-            POSTGRES_USER: root        # Пользователь базы данных
-            POSTGRES_PASSWORD: root    # Пароль базы данных
+            POSTGRES_USER: developer        # Пользователь базы данных
+            POSTGRES_PASSWORD: /2Ip20R3\e’g    # Пароль базы данных
         volumes:
             - postgres-data:/var/lib/postgresql/data
         ports:
