@@ -5,7 +5,6 @@ import gsap from 'gsap';
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import App from "@/Layouts/App.vue";
 import { usePage } from '@inertiajs/vue3'
-import {computed} from "vue";
 
 const page = usePage()
 

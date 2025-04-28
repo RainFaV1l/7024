@@ -1,5 +1,5 @@
-# Базовый образ PHP 8.2 с FPM
-FROM php:8.2-fpm
+# Базовый образ PHP 8.3 с FPM
+FROM php:8.3-fpm
 
 # Установка системных пакетов и PHP-расширений
 RUN apt-get update && apt-get install -y \

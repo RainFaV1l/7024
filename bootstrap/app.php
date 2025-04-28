@@ -4,8 +4,8 @@ use App\Http\Middleware\HandleInertiaRequests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -17,23 +17,28 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             HandleInertiaRequests::class,
         ]);
+        $middleware->trustProxies(
+            at: explode(',', env('TRUSTED_PROXIES', '172.23.0.0/16')),
+            headers: Request::HEADER_X_FORWARDED_FOR
+        | Request::HEADER_X_FORWARDED_HOST
+        | Request::HEADER_X_FORWARDED_PORT
+        | Request::HEADER_X_FORWARDED_PROTO,            // какие заголовки доверять
+        );
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        $exceptions->respond(function (Response $response, Throwable $exception, Request $request) {
-//            if (!app()->environment(['local', 'testing']) && in_array($response->getStatusCode(), [500, 503, 404, 403])) {
+//        $exceptions->respond(function (Response $response, Throwable $exception, \Illuminate\Http\Request $request) {
 //
-//            } else if ($response->getStatusCode() === 419) {
-//                return back()->with([
-//                    'message' => 'The page expired, please try again.',
-//                ]);
+//            // Skip custom Inertia error page for MoonShine admin routes
+//            if ($request->is('admin*')) {
+//                // Returning null lets the default exception handler process the response
+//                return redirect('/admin/login');
 //            }
 //
-//            return $response;
-
-            return \Inertia\Inertia::render('Errors/Error', [
-                'status' => $response->getStatusCode(),
-            ])
-                ->toResponse($request)
-                ->setStatusCode($response->getStatusCode());
-        });
-    })->create();
+//            return \Inertia\Inertia::render('Errors/Error', [
+//                'status' => $response->getStatusCode(),
+//            ])
+//                ->toResponse($request)
+//                ->setStatusCode($response->getStatusCode());
+//        });
+    })
+    ->create();

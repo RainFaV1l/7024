@@ -11,6 +11,8 @@ Route::group([
         Route::get('/studio', 'studio')->name('studio');
         Route::get('/dilesta', 'dilesta')->name('dilesta');
         Route::get('/module', 'module')->name('module');
+
+        Route::post('application/create', 'create')->name('create');
     });
 });
 

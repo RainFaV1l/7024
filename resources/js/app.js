@@ -1,6 +1,8 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import {MotionPlugin} from "@vueuse/motion";
+import ToastPlugin from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-bootstrap.css';
 
 createInertiaApp({
     resolve: name => {
@@ -11,6 +13,7 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(MotionPlugin)
+            .use(ToastPlugin)
             .mount(el)
     },
 })

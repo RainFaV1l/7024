@@ -57,9 +57,9 @@ const scrollToPreviousSection = () => {
     <section class="relative h-dvh bg-dark overflow-hidden section">
         <Circle/>
         <div class="z-10 h-full">
-            <HeaderComponent :click="scrollToPreviousSection"/>
-            <div class="flex justify-between h-full">
-                <Sidebar :click="scrollToPreviousSection"/>
+            <HeaderComponent :click="scrollToPreviousSection" :is-index="true"/>
+            <div class="h-full flex justify-between">
+                <Sidebar :click="scrollToPreviousSection" :is-index="true"/>
                 <div class="grid grid-cols-3 p-[40px] gap-[30px] h-[87%] w-full">
                     <Service link="/studio" :services="services" :icon="CameraIcon"/>
                     <div class="col-span-2 flex flex-col gap-[30px]">

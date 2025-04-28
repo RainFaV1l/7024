@@ -9,8 +9,14 @@
     --font-sans: 'Montserrat', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
     --color-dark: #26272C;
+    --color-dilesta-dark: #1D1D27;
+    --color-module-dark: #16222E;
     --color-dark-blue: #04293F;
     --color-dark-border: rgba(255, 255, 255, 0.1);
     --color-service-border: rgba(255, 255, 255, 0.2);
     --shadow-inner-service: inset 0 0px 8px rgba(255, 255, 255, 0.25);
+}
+
+.text-leading-tracking {
+    @apply leading-[150%] tracking-[2px]
 }
