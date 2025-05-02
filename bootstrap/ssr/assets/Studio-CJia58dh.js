@@ -38,7 +38,7 @@ const _sfc_main$t = {
             "fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-1000",
             isFadingOut.value ? "opacity-0" : "opacity-100"
           ]
-        }, _attrs))} data-v-f68f6dac><video class="w-full h-full object-cover" autoplay muted playsinline data-v-f68f6dac><source${ssrRenderAttr("src", unref(video))} type="video/mp4" data-v-f68f6dac></video></div>`);
+        }, _attrs))} data-v-b4bb8df5><video class="h-[70%] sm:w-full sm:h-full object-cover" autoplay muted playsinline data-v-b4bb8df5><source${ssrRenderAttr("src", unref(video))} type="video/mp4" data-v-b4bb8df5></video></div>`);
       } else {
         _push(`<!---->`);
       }
@@ -51,7 +51,7 @@ _sfc_main$t.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Loader.vue");
   return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const Loader = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-f68f6dac"]]);
+const Loader = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-b4bb8df5"]]);
 const _sfc_main$s = {
   __name: "App",
   __ssrInlineRender: true,
@@ -162,7 +162,7 @@ const _sfc_main$q = {
       }
     };
     const getBaseClasses = (type) => {
-      return `rounded-[4px] uppercase text-base border border-white leading-[140%] tracking-[1.5px] transition ` + getClassByType(type);
+      return `cursor-pointer rounded-[4px] uppercase text-sm md:text-base border border-white leading-[140%] tracking-[1.5px] transition ` + getClassByType(type);
     };
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<!--[-->`);
@@ -227,12 +227,12 @@ const _sfc_main$p = {
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<p class="text-lg text-white opacity-80 leading-[150%] tracking-[2px]"${_scopeId}>${ssrInterpolate(__props.name)}</p><div class="relative flex items-center"${_scopeId}>`);
+            _push2(`<p class="text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]"${_scopeId}>${ssrInterpolate(__props.name)}</p><div class="relative flex items-center"${_scopeId}>`);
             _push2(ssrRenderComponent(unref(ArrowUpRightIcon), { class: "absolute top-1/2 -translate-1/2 size-[20px] text-white opacity-80 icon transition-all duration-300 ease-in-out group-hover:-translate-y-[75%]" }, null, _parent2, _scopeId));
             _push2(`</div>`);
           } else {
             return [
-              createVNode("p", { class: "text-lg text-white opacity-80 leading-[150%] tracking-[2px]" }, toDisplayString(__props.name), 1),
+              createVNode("p", { class: "text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]" }, toDisplayString(__props.name), 1),
               createVNode("div", { class: "relative flex items-center" }, [
                 createVNode(unref(ArrowUpRightIcon), { class: "absolute top-1/2 -translate-1/2 size-[20px] text-white opacity-80 icon transition-all duration-300 ease-in-out group-hover:-translate-y-[75%]" })
               ])
@@ -294,7 +294,7 @@ const _sfc_main$o = {
       }
     };
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between" }, _attrs))}><div class="basis-[33%]"><div class="${ssrRenderClass([getClasses(props.position), "flex flex-col items-start gap-[40px] p-[40px] h-full"])}"><p class="text-white opacity-80 leading-[150%] tracking-[2px] w-[400px]">${ssrInterpolate(props.description)}</p>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between flex-col xl:flex-row border-b border-dark-border" }, _attrs))}><div class="basis-[33%] border-r border-dark-border"><div class="${ssrRenderClass([getClasses(props.position), "flex flex-col items-start gap-[40px] px-[20px] py-[40px] md:px-[40px] h-full"])}"><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px] xl:w-[400px]">${ssrInterpolate(props.description)}</p>`);
       _push(ssrRenderComponent(_sfc_main$q, {
         link: props.link
       }, {
@@ -309,7 +309,7 @@ const _sfc_main$o = {
         }),
         _: 1
       }, _parent));
-      _push(`</div><div class="w-full bg-white h-[1px] opacity-10"></div></div><div class="basis-[67%] flex flex-col justify-between border-l border-b border-dark-border"><p class="w-[638px] text-white opacity-80 leading-[150%] tracking-[2px] py-[100px] px-[40px]">${ssrInterpolate(props.longDescription)}</p>`);
+      _push(`</div><div class="w-full bg-white h-[1px] opacity-10"></div></div><div class="basis-[67%] flex flex-col justify-between border-l border-b border-dark-border"><p class="text-sm sm:text-base md:text-lg xl:w-[638px] text-white opacity-80 leading-[150%] tracking-[2px] py-[50px] px-[20px] md:py-[100px] md:px-[40px]">${ssrInterpolate(props.longDescription)}</p>`);
       _push(ssrRenderComponent(_sfc_main$p, {
         name: "Смотреть примеры работ",
         link: "/",
@@ -340,11 +340,11 @@ const _sfc_main$n = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between" }, _attrs))}><div class="p-[40px] w-full"><h2 class="uppercase text-4xl text-white">Наши услуги</h2><div class="mt-[40px] flex flex-wrap gap-[30px]"><!--[-->`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between" }, _attrs))}><div class="px-[20px] md:px-[40px] py-[40px] w-full"><h2 class="uppercase text-4xl text-white">Наши услуги</h2><div class="grid grid-cols-1 lg:grid-cols-2 mt-[40px] gap-[30px]"><!--[-->`);
       ssrRenderList(__props.services, (service) => {
-        _push(`<div class="flex flex-col gap-[30px] p-[40px] pb-[70px] transition-all duration-300 ease-in-out w-[49%] last:w-[100%] border border-service-border hover:border-white backdrop-blur-[100px] rounded-[7px]"><div class="flex rounded-[7px] items-center justify-center size-[64px] border border-service-border shadow-inner-service">`);
+        _push(`<div class="col-span-1 lg:last:col-span-2 flex flex-col gap-[20px] md:gap-[30px] p-[30px] md:p-[40px] transition-all duration-300 ease-in-out border border-service-border hover:border-white backdrop-blur-[100px] rounded-[7px]"><div class="flex rounded-[7px] items-center justify-center size-[64px] border border-service-border shadow-inner-service">`);
         ssrRenderVNode(_push, createVNode(resolveDynamicComponent(service.icon), { class: "size-[20px] text-white" }, null), _parent);
-        _push(`</div><div class="flex flex-col gap-[15px]"><h3 class="text-4xl text-white">${ssrInterpolate(service.title)}</h3><p class="text-lg leading-[150%] tracking-[2px] text-white opacity-80 w-[600px]">${ssrInterpolate(service.description)}</p></div></div>`);
+        _push(`</div><div class="flex flex-col gap-[15px]"><h3 class="text-xl sm:text-3xl md:text-4xl text-white">${ssrInterpolate(service.title)}</h3><p class="text-sm sm:text-base md:text-lg leading-[150%] tracking-[2px] text-white opacity-80 w-full 2xl:w-[600px]">${ssrInterpolate(service.description)}</p></div></div>`);
       });
       _push(`<!--]--></div></div></div>`);
     };
@@ -381,7 +381,7 @@ const _sfc_main$m = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "relative min-h-[129px]" }, _attrs))}><div class="${ssrRenderClass([__props.isIndex ? "absolute" : "fixed", "w-full z-10 backdrop-blur-2xl"])}"><header class="p-[40px]"><button class="text-[32px] uppercase text-white cursor-pointer">${ssrInterpolate(__props.title)}</button></header><div class="w-full bg-white h-[1px] opacity-10"></div></div></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "relative h-[68px] sm:h-[84px] md:min-h-[129px]" }, _attrs))}><div class="${ssrRenderClass([__props.isIndex ? "absolute" : "fixed", "w-full z-10 backdrop-blur-2xl"])}"><header class="p-[20px] md:p-[40px]"><button class="text-xl sm:text-[32px] uppercase text-white cursor-pointer text-left">${ssrInterpolate(__props.title)}</button></header><div class="w-full bg-white h-[1px] opacity-10"></div></div></div>`);
     };
   }
 };
@@ -407,9 +407,7 @@ const _sfc_main$l = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({
-        class: [__props.isIndex ? "w-[11%]" : "w-[9%]", "relative flex flex-col justify-start"]
-      }, _attrs))}><div class="${ssrRenderClass([__props.isIndex ? "absolute" : "fixed", "h-full flex flex-col justify-start"])}"><div class="${ssrRenderClass([__props.isIndex ? "absolute right-0" : "fixed left-[9%]", "w-[1px] bg-white opacity-10 h-full"])}"></div><div class="flex items-start justify-start flex-col gap-[60px] p-[50px]"><div class="block cursor-pointer"><svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.292893 7.29289C-0.0976311 7.68342 -0.0976311 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292893 7.29289ZM43 7L1 7V9L43 9V7Z" fill="white" fill-opacity="0.8"></path></svg></div><div class="text-white text-lg uppercase tracking-[1.5px] opacity-80 whitespace-nowrap transform -rotate-90 -ml-14 mt-12 cursor-pointer">GROUP 7024 </div></div><div class="${ssrRenderClass([__props.isIndex ? "absolute left-[40px] top-[760px]" : "fixed left-[40px] bottom-[40px]", "flex items-center gap-[15px]"])}">`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "relative hidden lg:flex flex-col justify-start w-[181px]" }, _attrs))}><div class="${ssrRenderClass([__props.isIndex ? "absolute" : "fixed", "h-full flex flex-col justify-start"])}"><div class="absolute bg-white opacity-10 h-full right-[0px] w-px"></div><div class="flex items-start justify-start flex-col gap-[60px] p-[50px]"><div class="block cursor-pointer"><svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.292893 7.29289C-0.0976311 7.68342 -0.0976311 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292893 7.29289ZM43 7L1 7V9L43 9V7Z" fill="white" fill-opacity="0.8"></path></svg></div><div class="text-white text-lg uppercase tracking-[1.5px] opacity-80 whitespace-nowrap transform -rotate-90 -ml-14 mt-12 cursor-pointer">GROUP 7024 </div></div><div class="${ssrRenderClass([__props.isIndex ? "absolute left-[40px] top-[760px]" : "fixed left-[40px] bottom-[40px]", "flex items-center gap-[15px]"])}">`);
       _push(ssrRenderComponent(unref(Link), {
         href: "",
         class: "hover:opacity-60 transition-all ease-in-out"
@@ -475,7 +473,7 @@ _sfc_main$l.setup = (props, ctx) => {
   return _sfc_setup$l ? _sfc_setup$l(props, ctx) : void 0;
 };
 const _sfc_main$k = {};
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
+function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
   _push(`<div${ssrRenderAttrs(mergeProps({ class: "circle-wrapper" }, _attrs))}><div class="circle"></div></div>`);
 }
 const _sfc_setup$k = _sfc_main$k.setup;
@@ -484,7 +482,7 @@ _sfc_main$k.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Circle.vue");
   return _sfc_setup$k ? _sfc_setup$k(props, ctx) : void 0;
 };
-const Circle = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["ssrRender", _sfc_ssrRender]]);
+const Circle = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["ssrRender", _sfc_ssrRender$1]]);
 const _sfc_main$j = {
   __name: "Title",
   __ssrInlineRender: true,
@@ -497,7 +495,7 @@ const _sfc_main$j = {
   setup(__props) {
     const props = __props;
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "w-full" }, _attrs))}><div class="p-[40px] w-full"><h1 class="uppercase text-[64px] text-white">${ssrInterpolate(props.title)}</h1></div><div class="w-full bg-white h-[1px] opacity-10"></div></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "w-full" }, _attrs))}><div class="px-[20px] py-[40px] md:px-[40px] w-full"><h1 class="uppercase text-3xl sm:text-5xl md:text-[64px] text-white">${ssrInterpolate(props.title)}</h1></div><div class="w-full bg-white h-[1px] opacity-10"></div></div>`);
     };
   }
 };
@@ -656,7 +654,7 @@ const _sfc_main$h = {
       _push(`<div${ssrRenderAttrs(mergeProps({
         class: "border-t border-t-dark-border",
         id: "application"
-      }, _attrs))}><div class="flex flex-col gap-[40px]"><div class="flex justify-between items-center border-b border-b-dark-border"><div class="py-[74px] px-[40px] flex items-center justify-items-start w-[42%] border-r border-r-dark-border"><h2 class="uppercase text-4xl text-white">Заявка</h2></div><div class="w-[58%] pr-[206px] px-[40px]"><p class="text-white opacity-80 leading-[150%] tracking-[2px]">Оставьте заявку, чтобы обсудить ваш проект или получить бесплатную консультацию от наших специалистов!</p></div></div><div class="px-[40px] pb-[40px]"><form class="flex flex-col items-start gap-[40px]"><div class="flex items-center gap-[30px] w-full max-w-[85%]">`);
+      }, _attrs))}><div class="flex flex-col gap-[40px]"><div class="flex flex-col md:flex-row justify-between items-center border-b border-b-dark-border"><div class="py-[40px] md:py-[74px] px-[20px] md:px-[40px] flex items-center justify-items-start w-full md:w-[42%] border-b md:border-r md:border-r-dark-border border-b-dark-border md:border-b-0"><h2 class="uppercase text-xl sm:text-3xl md:text-4xl text-white">Заявка</h2></div><div class="w-full md:w-[58%] xl:pr-[206px] px-[20px] md:px-[40px] py-[40px]"><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">Оставьте заявку, чтобы обсудить ваш проект или получить бесплатную консультацию от наших специалистов!</p></div></div><div class="px-[20px] md:px-[40px] md:pb-[40px]"><form class="flex flex-col items-start gap-[40px]"><div class="flex flex-col md:flex-row items-center gap-[30px] w-full max-w-full md:max-w-[85%]">`);
       _push(ssrRenderComponent(_sfc_main$i, {
         placeholder: "Имя",
         modelValue: form.name,
@@ -783,7 +781,7 @@ const _sfc_main$g = {
       }
     ];
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<footer${ssrRenderAttrs(mergeProps({ class: "relative z-10 border-t border-t-dark-border h-[320px] mt-[50px]" }, _attrs))}><div class="flex items-center h-full"><div class="flex flex-col pt-[50px] gap-[40px] px-[50px] border-r h-full border-r-dark-border w-[30%]"><div class="flex flex-col gap-[15px]"><h2 class="text-[32px] text-white">GROUP 7024</h2><p class="text-sm text-white opacity-80 text-leading-tracking">© 2025 GROUP 7024. All Rights Reserved.</p></div><div class="flex items-center gap-[15px]">`);
+      _push(`<footer${ssrRenderAttrs(mergeProps({ class: "relative z-10 border-t border-t-dark-border lg:h-[320px] mt-[50px]" }, _attrs))}><div class="flex flex-col lg:flex-row items-center h-full"><div class="flex flex-col py-[40px] xl:py-[0] xl:pt-[50px] gap-[40px] px-[20px] md:px-[40px] lg:px-[50px] border-b lg:border-r h-full border-b-dark-border lg:border-r-dark-border w-full lg:w-[30%]"><div class="flex flex-col gap-[15px]"><h2 class="text-[32px] text-white">GROUP 7024</h2><p class="text-sm text-white opacity-80 text-leading-tracking">© 2025 GROUP 7024. All Rights Reserved.</p></div><div class="flex items-center gap-[15px]">`);
       _push(ssrRenderComponent(unref(Link), {
         href: "",
         class: "hover:opacity-60 transition-all ease-in-out"
@@ -838,7 +836,7 @@ const _sfc_main$g = {
         }),
         _: 1
       }, _parent));
-      _push(`</div></div><div class="flex pt-[50px] h-full items-start justify-center gap-[70px] border-r border-r-dark-border px-[70px] w-[48%]"><!--[-->`);
+      _push(`</div></div><div class="flex flex-wrap md:flex-nowrap py-[40px] xl:py-0 xl:pt-[50px] h-full items-start lg:justify-center gap-[30px] md:gap-[70px] w-full xl:border-r border-r-dark-border px-[20px] md:px-[40px] lg:px-[70px] xl:w-[48%]"><!--[-->`);
       ssrRenderList(menus, (menu) => {
         _push(`<div class="flex flex-col gap-2"><h4 class="font-bold uppercase text-white text-base text-leading-tracking mb-[15px] opacity-80">${ssrInterpolate(menu.name)}</h4><!--[-->`);
         ssrRenderList(menu.items, (item, key) => {
@@ -866,7 +864,7 @@ const _sfc_main$g = {
         });
         _push(`<!--]--></div>`);
       });
-      _push(`<!--]--></div><div class="w-[22%]"></div></div></footer>`);
+      _push(`<!--]--></div><div class="xl:w-[22%]"></div></div></footer>`);
     };
   }
 };
@@ -912,11 +910,11 @@ const _sfc_main$f = /* @__PURE__ */ Object.assign({ layout: _sfc_main$s }, {
         title: "Group 7024",
         click: () => unref(router).visit("/")
       }, null, _parent));
-      _push(`<div class="flex justify-between w-full">`);
+      _push(`<div class="grid lg:grid-cols-[181px_1fr] h-full">`);
       _push(ssrRenderComponent(_sfc_main$l, {
-        click: () => unref(router).visit("/")
+        click: () => unref(router).visit("/#companies")
       }, null, _parent));
-      _push(`<div class="flex flex-col w-[91%]">`);
+      _push(`<div class="flex flex-col w-full">`);
       _push(ssrRenderComponent(_sfc_main$j, { title: "Dilesta" }, null, _parent));
       _push(ssrRenderComponent(_sfc_main$o, {
         label: label$2,
@@ -958,7 +956,7 @@ const _sfc_main$e = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex flex-col gap-[10px] text-left cursor-pointer" }, _attrs))}><h1 class="uppercase text-8xl text-white link">${ssrInterpolate(__props.title)}</h1><p class="ml-1 text-white opacity-80 text-lg">${ssrInterpolate(__props.subtitle)}</p></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex flex-col gap-[10px] cursor-pointer text-left" }, _attrs))}><h1 class="uppercase text-4xl sm:text-6xl md:text-8xl text-white link">${ssrInterpolate(__props.title)}</h1><p class="ml-1 text-white opacity-80 text-sm sm:text-base md:text-lg">${ssrInterpolate(__props.subtitle)}</p></div>`);
     };
   }
 };
@@ -1014,33 +1012,22 @@ const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   __proto__: null,
   default: _sfc_main$d
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$c = {
-  __name: "ServiceIcon",
-  __ssrInlineRender: true,
-  props: {
-    size: {
-      type: Number,
-      required: false,
-      default: 64
-    }
-  },
-  setup(__props) {
-    return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({
-        style: [{ width: __props.size + "px", height: __props.size + "px" }, { "background-color": "rgba(39, 40, 45, 0.01)", "border-color": "rgba(255, 255, 255, 0.2)", "box-shadow": "inset 0 0 8px rgba(255, 255, 255, 0.25)" }],
-        class: "rounded-[7px] border border-white flex justify-center items-center"
-      }, _attrs))}>`);
-      ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
-      _push(`</div>`);
-    };
-  }
-};
+const _sfc_main$c = {};
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
+  _push(`<div${ssrRenderAttrs(mergeProps({
+    style: { "background-color": "rgba(39, 40, 45, 0.01)", "border-color": "rgba(255, 255, 255, 0.2)", "box-shadow": "inset 0 0 8px rgba(255, 255, 255, 0.25)" },
+    class: "rounded-[7px] border border-white flex justify-center items-center"
+  }, _attrs))}>`);
+  ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
+  _push(`</div>`);
+}
 const _sfc_setup$c = _sfc_main$c.setup;
 _sfc_main$c.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Service/ServiceIcon.vue");
   return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
 };
+const ServiceIcon = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["ssrRender", _sfc_ssrRender]]);
 const _sfc_main$b = {
   __name: "ServiceText",
   __ssrInlineRender: true,
@@ -1062,11 +1049,11 @@ const _sfc_main$b = {
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(Link), mergeProps({
         href: __props.link,
-        class: "p-[40px] rounded-[7px] backdrop-blur-[100px] border border-white flex flex-col items-start gap-[20px] h-full item cursor-pointer"
+        class: "p-[30px] md:p-[40px] rounded-[7px] backdrop-blur-[100px] border border-white flex flex-col items-start gap-[20px] h-full item cursor-pointer"
       }, _attrs), {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(ssrRenderComponent(_sfc_main$c, null, {
+            _push2(ssrRenderComponent(ServiceIcon, { class: "size-[48px] md:size-[64px]" }, {
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
                   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push3, _parent3, _scopeId2);
@@ -1078,18 +1065,18 @@ const _sfc_main$b = {
               }),
               _: 3
             }, _parent2, _scopeId));
-            _push2(`<div class="flex flex-col gap-[10px]" data-v-8de73840${_scopeId}><h2 class="text-[64px] uppercase text-white leading-[120%] opacity-80" data-v-8de73840${_scopeId}>${ssrInterpolate(__props.name)}</h2><p class="text-white leading-[140%] tracking-[1.5px] opacity-80" data-v-8de73840${_scopeId}>${ssrInterpolate(__props.description)}</p></div>`);
+            _push2(`<div class="flex flex-col gap-[10px]" data-v-ed62b2b8${_scopeId}><h2 class="text-2xl md:text-4xl xl:text-5xl 2xl:text-[64px] uppercase text-white leading-[120%] opacity-80" data-v-ed62b2b8${_scopeId}>${ssrInterpolate(__props.name)}</h2><p class="text-sm md:text-base lg:text-lg text-white leading-[140%] tracking-[1.5px] opacity-80" data-v-ed62b2b8${_scopeId}>${ssrInterpolate(__props.description)}</p></div>`);
           } else {
             return [
-              createVNode(_sfc_main$c, null, {
+              createVNode(ServiceIcon, { class: "size-[48px] md:size-[64px]" }, {
                 default: withCtx(() => [
                   renderSlot(_ctx.$slots, "default", {}, void 0, true)
                 ]),
                 _: 3
               }),
               createVNode("div", { class: "flex flex-col gap-[10px]" }, [
-                createVNode("h2", { class: "text-[64px] uppercase text-white leading-[120%] opacity-80" }, toDisplayString(__props.name), 1),
-                createVNode("p", { class: "text-white leading-[140%] tracking-[1.5px] opacity-80" }, toDisplayString(__props.description), 1)
+                createVNode("h2", { class: "text-2xl md:text-4xl xl:text-5xl 2xl:text-[64px] uppercase text-white leading-[120%] opacity-80" }, toDisplayString(__props.name), 1),
+                createVNode("p", { class: "text-sm md:text-base lg:text-lg text-white leading-[140%] tracking-[1.5px] opacity-80" }, toDisplayString(__props.description), 1)
               ])
             ];
           }
@@ -1105,7 +1092,7 @@ _sfc_main$b.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Service/ServiceText.vue");
   return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
 };
-const ServiceText = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-8de73840"]]);
+const ServiceText = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-ed62b2b8"]]);
 const _sfc_main$a = {
   __name: "ServiceItem",
   __ssrInlineRender: true,
@@ -1119,7 +1106,7 @@ const _sfc_main$a = {
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex items-center gap-[15px]" }, _attrs))}>`);
       ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
-      _push(`<p class="text-lg leading-[140%] text-white opacity-80 tracking-[1.5px]">${ssrInterpolate(__props.name)}</p></div>`);
+      _push(`<p class="text-sm md:text-base lg:text-lg leading-[140%] text-white opacity-80 tracking-[1.5px]">${ssrInterpolate(__props.name)}</p></div>`);
     };
   }
 };
@@ -1149,55 +1136,37 @@ const _sfc_main$9 = {
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(Link), mergeProps({
         href: __props.link,
-        class: "p-[40px] rounded-[7px] backdrop-blur-[100px] border border-white flex flex-col items-start gap-[30px] item cursor-pointer"
+        class: "p-[30px] md:p-[40px] rounded-[7px] backdrop-blur-[100px] border border-white flex flex-col items-start gap-[30px] item cursor-pointer"
       }, _attrs), {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(ssrRenderComponent(_sfc_main$c, null, {
+            _push2(ssrRenderComponent(ServiceIcon, { class: "size-[48px] md:size-[64px]" }, {
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
-                  ssrRenderVNode(_push3, createVNode(resolveDynamicComponent(__props.icon), { class: "size-[26px] text-white" }, null), _parent3, _scopeId2);
+                  ssrRenderVNode(_push3, createVNode(resolveDynamicComponent(__props.icon), { class: "size-[24px] md:size-[26px] text-white" }, null), _parent3, _scopeId2);
                 } else {
                   return [
-                    (openBlock(), createBlock(resolveDynamicComponent(__props.icon), { class: "size-[26px] text-white" }))
+                    (openBlock(), createBlock(resolveDynamicComponent(__props.icon), { class: "size-[24px] md:size-[26px] text-white" }))
                   ];
                 }
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`<h2 class="text-[64px] uppercase text-white leading-[120%]" data-v-763ec40e${_scopeId}>STUDIO<br data-v-763ec40e${_scopeId}>7024</h2><div class="flex flex-col gap-5" data-v-763ec40e${_scopeId}><!--[-->`);
+            _push2(`<h2 class="text-2xl md:text-4xl xl:text-5xl 2xl:text-[64px] uppercase text-white leading-[120%]" data-v-838d32c9${_scopeId}>STUDIO <br class="hidden lg:block" data-v-838d32c9${_scopeId}>7024</h2><div class="flex flex-col gap-5" data-v-838d32c9${_scopeId}><!--[-->`);
             ssrRenderList(__props.services, (service) => {
-              _push2(`<div data-v-763ec40e${_scopeId}>`);
-              _push2(ssrRenderComponent(unref(Link), {
-                href: service.link
+              _push2(`<div data-v-838d32c9${_scopeId}>`);
+              _push2(ssrRenderComponent(_sfc_main$a, {
+                name: service.name
               }, {
                 default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
-                    _push3(ssrRenderComponent(_sfc_main$a, {
-                      name: service.name
-                    }, {
+                    _push3(ssrRenderComponent(ServiceIcon, { class: "size-[40px] md:size-[45px]" }, {
                       default: withCtx((_3, _push4, _parent4, _scopeId3) => {
                         if (_push4) {
-                          _push4(ssrRenderComponent(_sfc_main$c, { size: 45 }, {
-                            default: withCtx((_4, _push5, _parent5, _scopeId4) => {
-                              if (_push5) {
-                                ssrRenderVNode(_push5, createVNode(resolveDynamicComponent(service.icon), { class: "size-[20px] text-white" }, null), _parent5, _scopeId4);
-                              } else {
-                                return [
-                                  (openBlock(), createBlock(resolveDynamicComponent(service.icon), { class: "size-[20px] text-white" }))
-                                ];
-                              }
-                            }),
-                            _: 2
-                          }, _parent4, _scopeId3));
+                          ssrRenderVNode(_push4, createVNode(resolveDynamicComponent(service.icon), { class: "size-[18px] md:size-[20px] text-white" }, null), _parent4, _scopeId3);
                         } else {
                           return [
-                            createVNode(_sfc_main$c, { size: 45 }, {
-                              default: withCtx(() => [
-                                (openBlock(), createBlock(resolveDynamicComponent(service.icon), { class: "size-[20px] text-white" }))
-                              ]),
-                              _: 2
-                            }, 1024)
+                            (openBlock(), createBlock(resolveDynamicComponent(service.icon), { class: "size-[18px] md:size-[20px] text-white" }))
                           ];
                         }
                       }),
@@ -1205,19 +1174,12 @@ const _sfc_main$9 = {
                     }, _parent3, _scopeId2));
                   } else {
                     return [
-                      createVNode(_sfc_main$a, {
-                        name: service.name
-                      }, {
+                      createVNode(ServiceIcon, { class: "size-[40px] md:size-[45px]" }, {
                         default: withCtx(() => [
-                          createVNode(_sfc_main$c, { size: 45 }, {
-                            default: withCtx(() => [
-                              (openBlock(), createBlock(resolveDynamicComponent(service.icon), { class: "size-[20px] text-white" }))
-                            ]),
-                            _: 2
-                          }, 1024)
+                          (openBlock(), createBlock(resolveDynamicComponent(service.icon), { class: "size-[18px] md:size-[20px] text-white" }))
                         ]),
                         _: 2
-                      }, 1032, ["name"])
+                      }, 1024)
                     ];
                   }
                 }),
@@ -1228,15 +1190,15 @@ const _sfc_main$9 = {
             _push2(`<!--]--></div>`);
           } else {
             return [
-              createVNode(_sfc_main$c, null, {
+              createVNode(ServiceIcon, { class: "size-[48px] md:size-[64px]" }, {
                 default: withCtx(() => [
-                  (openBlock(), createBlock(resolveDynamicComponent(__props.icon), { class: "size-[26px] text-white" }))
+                  (openBlock(), createBlock(resolveDynamicComponent(__props.icon), { class: "size-[24px] md:size-[26px] text-white" }))
                 ]),
                 _: 1
               }),
-              createVNode("h2", { class: "text-[64px] uppercase text-white leading-[120%]" }, [
-                createTextVNode("STUDIO"),
-                createVNode("br"),
+              createVNode("h2", { class: "text-2xl md:text-4xl xl:text-5xl 2xl:text-[64px] uppercase text-white leading-[120%]" }, [
+                createTextVNode("STUDIO "),
+                createVNode("br", { class: "hidden lg:block" }),
                 createTextVNode("7024")
               ]),
               createVNode("div", { class: "flex flex-col gap-5" }, [
@@ -1244,26 +1206,19 @@ const _sfc_main$9 = {
                   return openBlock(), createBlock("div", {
                     key: service.id
                   }, [
-                    createVNode(unref(Link), {
-                      href: service.link
+                    createVNode(_sfc_main$a, {
+                      name: service.name
                     }, {
                       default: withCtx(() => [
-                        createVNode(_sfc_main$a, {
-                          name: service.name
-                        }, {
+                        createVNode(ServiceIcon, { class: "size-[40px] md:size-[45px]" }, {
                           default: withCtx(() => [
-                            createVNode(_sfc_main$c, { size: 45 }, {
-                              default: withCtx(() => [
-                                (openBlock(), createBlock(resolveDynamicComponent(service.icon), { class: "size-[20px] text-white" }))
-                              ]),
-                              _: 2
-                            }, 1024)
+                            (openBlock(), createBlock(resolveDynamicComponent(service.icon), { class: "size-[18px] md:size-[20px] text-white" }))
                           ]),
                           _: 2
-                        }, 1032, ["name"])
+                        }, 1024)
                       ]),
                       _: 2
-                    }, 1032, ["href"])
+                    }, 1032, ["name"])
                   ]);
                 }), 128))
               ])
@@ -1281,7 +1236,7 @@ _sfc_main$9.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Service/Service.vue");
   return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const Service = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-763ec40e"]]);
+const Service = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-838d32c9"]]);
 const _sfc_main$8 = {
   __name: "CompaniesSection",
   __ssrInlineRender: true,
@@ -1321,25 +1276,28 @@ const _sfc_main$8 = {
       });
     };
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<section${ssrRenderAttrs(mergeProps({ class: "relative h-dvh bg-dark overflow-hidden section" }, _attrs))}>`);
+      _push(`<section${ssrRenderAttrs(mergeProps({
+        class: "relative lg:h-dvh bg-dark overflow-hidden section",
+        id: "companies"
+      }, _attrs))}>`);
       _push(ssrRenderComponent(Circle, null, null, _parent));
       _push(`<div class="z-10 h-full">`);
       _push(ssrRenderComponent(_sfc_main$m, {
         click: scrollToPreviousSection,
         "is-index": true
       }, null, _parent));
-      _push(`<div class="h-full flex justify-between">`);
+      _push(`<div class="grid lg:grid-cols-[181px_1fr] h-full">`);
       _push(ssrRenderComponent(_sfc_main$l, {
         click: scrollToPreviousSection,
         "is-index": true
       }, null, _parent));
-      _push(`<div class="grid grid-cols-3 p-[40px] gap-[30px] h-[87%] w-full">`);
+      _push(`<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 p-[20px] md:p-[40px] gap-[20px] md:gap-[30px] h-[87%] w-full">`);
       _push(ssrRenderComponent(Service, {
         link: "/studio",
         services,
         icon: unref(CameraIcon)
       }, null, _parent));
-      _push(`<div class="col-span-2 flex flex-col gap-[30px]">`);
+      _push(`<div class="xl:col-span-2 flex flex-col gap-[20px] md:gap-[30px]">`);
       _push(ssrRenderComponent(ServiceText, {
         link: "/dilesta",
         description: "Проектирование и строительство зданий и сооружений",
@@ -1393,7 +1351,7 @@ const _sfc_main$7 = {
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<section${ssrRenderAttrs(mergeProps({ class: "relative h-dvh bg-dark overflow-hidden section" }, _attrs))}>`);
       _push(ssrRenderComponent(Circle, null, null, _parent));
-      _push(`<div class="flex justify-center items-center h-full z-10">`);
+      _push(`<div class="flex justify-center items-center h-full z-10 px-[40px]">`);
       _push(ssrRenderComponent(_sfc_main$e, {
         title: "GROUP 7024",
         subtitle: "Необыкновенно"
@@ -1483,7 +1441,7 @@ const _sfc_main$5 = {
       }
     };
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between" }, _attrs))}><div class="basis-[50%]"><div class="${ssrRenderClass([getClasses(props.position), "flex flex-col items-start gap-[40px] p-[40px] h-full"])}"><p class="text-white opacity-80 leading-[150%] tracking-[2px] w-[400px]">${props.description ?? ""}</p>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between flex-col md:flex-row border-b border-b-dark-border" }, _attrs))}><div class="basis-[50%]"><div class="${ssrRenderClass([getClasses(props.position), "flex flex-col items-start gap-[40px] px-[20px] py-[40px] md:px-[40px] h-full"])}"><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px] md:w-[400px]">${props.description ?? ""}</p>`);
       _push(ssrRenderComponent(_sfc_main$q, {
         link: props.link
       }, {
@@ -1498,7 +1456,7 @@ const _sfc_main$5 = {
         }),
         _: 1
       }, _parent));
-      _push(`</div><div class="w-full bg-white h-[1px] opacity-10"></div></div><div class="basis-[50%] flex flex-col justify-start border-l border-b border-dark-border"><p class="w-[638px] text-white opacity-80 leading-[150%] tracking-[2px] py-[40px] pb-[140px] px-[40px]">${ssrInterpolate(props.longDescription)}</p></div></div>`);
+      _push(`</div><div class="w-full bg-white h-[1px] opacity-10"></div></div><div class="basis-[50%] flex flex-col justify-start border-l border-b border-dark-border"><p class="text-sm sm:text-base md:text-lg xl:w-[638px] text-white opacity-80 leading-[150%] tracking-[2px] py-[40px] px-[20px] pb-[40px] md:pb-[140px] md:px-[40px]">${ssrInterpolate(props.longDescription)}</p></div></div>`);
     };
   }
 };
@@ -1532,13 +1490,13 @@ const _sfc_main$4 = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between" }, _attrs))}><div class="flex flex-col justify-between basis-[50.05%]"><div class="flex flex-col gap-[30px] border-r border-r-dark-border py-[40px] px-[40px]"><h2 class="uppercase text-4xl text-white">${ssrInterpolate(__props.title)}</h2><p class="text-white opacity-80 leading-[150%] tracking-[2px]">${ssrInterpolate(__props.description)}</p></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between flex-col xl:flex-row border-b border-dark-border" }, _attrs))}><div class="flex flex-col justify-between basis-[50.05%]"><div class="flex flex-col gap-[30px] border-r border-r-dark-border px-[20px] py-[40px] md:px-[40px]"><h2 class="uppercase text-xl sm:text-3xl md:text-4xl text-white">${ssrInterpolate(__props.title)}</h2><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">${ssrInterpolate(__props.description)}</p></div>`);
       _push(ssrRenderComponent(_sfc_main$p, {
         name: "Смотреть все",
         link: "",
-        class: "pb-[15px]"
+        class: "pb-[15px] border-b border-b-dark-border"
       }, null, _parent));
-      _push(`</div><div class="flex flex-col justify-between basis-[50%]"><div class="h-[464px] w-[710px]"><img${ssrRenderAttr("src", unref(exampleImage))} alt="Пример" class="h-full w-full object-cover block"></div></div></div>`);
+      _push(`</div><div class="flex flex-col justify-between basis-[50%] px-[20px] md:px-[40px] py-[40px] xl:m-0"><div class="h-full md:h-[464px] w-full xl:w-[710px]"><img${ssrRenderAttr("src", unref(exampleImage))} alt="Пример" class="h-full w-full object-cover object-left xl:object-center block rounded xl:rounded-none"></div></div></div>`);
     };
   }
 };
@@ -1568,11 +1526,11 @@ const _sfc_main$3 = /* @__PURE__ */ Object.assign({ layout: _sfc_main$s }, {
         title: "Group 7024",
         click: () => unref(router).visit("/")
       }, null, _parent));
-      _push(`<div class="flex justify-between w-full">`);
+      _push(`<div class="grid lg:grid-cols-[181px_1fr] h-full">`);
       _push(ssrRenderComponent(_sfc_main$l, {
-        click: () => unref(router).visit("/")
+        click: () => unref(router).visit("/#companies")
       }, null, _parent));
-      _push(`<div class="flex flex-col w-[91%]">`);
+      _push(`<div class="flex flex-col">`);
       _push(ssrRenderComponent(_sfc_main$j, { title: "Module" }, null, _parent));
       _push(ssrRenderComponent(_sfc_main$5, {
         label: label$1,
@@ -1641,7 +1599,7 @@ const _sfc_main$2 = {
       }
     };
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between" }, _attrs))}><div class="basis-[67%]"><div class="${ssrRenderClass([getClasses(props.position), "flex flex-col items-start gap-[40px] p-[40px] h-full"])}"><p class="text-white opacity-80 leading-[150%] tracking-[2px]">${ssrInterpolate(props.description)}</p>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between flex-col md:flex-row border-b border-dark-border" }, _attrs))}><div class="basis-[67.23%] border-r border-dark-border"><div class="${ssrRenderClass([getClasses(props.position), "flex flex-col items-start gap-[40px] px-[20px] py-[40px] md:px-[40px] h-full"])}"><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">${ssrInterpolate(props.description)}</p>`);
       _push(ssrRenderComponent(_sfc_main$q, {
         link: props.link
       }, {
@@ -1656,7 +1614,7 @@ const _sfc_main$2 = {
         }),
         _: 1
       }, _parent));
-      _push(`</div><div class="w-full bg-white h-[1px] opacity-10"></div></div><div class="basis-[33%]"><div class="py-[40px] border-l border-b border-dark-border"><div class="flex flex-col gap-[15px]">`);
+      _push(`</div></div><div class="basis-[33%]"><div class="py-[20px] px-[0px] md:py-[40px]"><div class="flex flex-col gap-[15px]">`);
       _push(ssrRenderComponent(_sfc_main$p, {
         name: "Behance",
         link: "/"
@@ -1673,7 +1631,7 @@ const _sfc_main$2 = {
         name: "Youtube",
         link: "/"
       }, null, _parent));
-      _push(`<div class="w-full bg-white h-[1px] opacity-10 transition-all duration-300 ease-in-out group-hover:opacity-100"></div></div></div></div></div>`);
+      _push(`</div></div></div></div>`);
     };
   }
 };
@@ -1698,11 +1656,11 @@ const _sfc_main$1 = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between" }, _attrs))}><div class="basis-[67.25%] p-[40px] border-r border-r-dark-border"><h2 class="uppercase text-4xl text-white">Наши услуги</h2><div class="mt-[40px] flex flex-col gap-[30px]"><!--[-->`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex flex-col md:flex-row justify-between" }, _attrs))}><div class="basis-[100%] md:basis-[67.25%] px-[20px] md:px-[40px] py-[40px] border-r border-r-dark-border"><h2 class="uppercase text-xl sm:text-3xl md:text-4xl text-white">Наши услуги</h2><div class="mt-[40px] flex flex-col gap-[20px] md:gap-[30px]"><!--[-->`);
       ssrRenderList(__props.services, (service) => {
-        _push(`<div class="flex flex-col gap-[30px] p-[40px] transition-all duration-300 ease-in-out border border-service-border hover:border-white backdrop-blur-[100px] rounded-[7px]"><div class="flex rounded-[7px] items-center justify-center size-[64px] border border-service-border shadow-inner-service">`);
-        ssrRenderVNode(_push, createVNode(resolveDynamicComponent(service.icon), { class: "size-[20px] text-white" }, null), _parent);
-        _push(`</div><div class="flex flex-col gap-[15px]"><h3 class="text-4xl text-white">${ssrInterpolate(service.title)}</h3><p class="text-lg leading-[150%] tracking-[2px] text-white opacity-80">${ssrInterpolate(service.description)}</p></div></div>`);
+        _push(`<div class="flex flex-col gap-[20px] md:gap-[30px] p-[30px] md:p-[40px] transition-all duration-300 ease-in-out border border-service-border hover:border-white backdrop-blur-[100px] rounded-[7px]"><div class="flex rounded-[7px] items-center justify-center size-[64px] border border-service-border shadow-inner-service">`);
+        ssrRenderVNode(_push, createVNode(resolveDynamicComponent(service.icon), { class: "size-[18px] md:size-[20px] text-white" }, null), _parent);
+        _push(`</div><div class="flex flex-col gap-[15px]"><h3 class="text-xl sm:text-3xl md:text-4xl text-white">${ssrInterpolate(service.title)}</h3><p class="text-sm sm:text-base md:text-lg leading-[150%] tracking-[2px] text-white opacity-80">${ssrInterpolate(service.description)}</p></div></div>`);
       });
       _push(`<!--]--></div></div><div class="basis-[33%]"></div></div>`);
     };
@@ -1753,11 +1711,11 @@ const _sfc_main = /* @__PURE__ */ Object.assign({ layout: _sfc_main$s }, {
         title: "Group 7024",
         click: () => unref(router).visit("/")
       }, null, _parent));
-      _push(`<div class="flex justify-between w-full">`);
+      _push(`<div class="grid lg:grid-cols-[181px_1fr] h-full">`);
       _push(ssrRenderComponent(_sfc_main$l, {
-        click: () => unref(router).visit("/")
+        click: () => unref(router).visit("/#companies")
       }, null, _parent));
-      _push(`<div class="flex flex-col w-[91%]">`);
+      _push(`<div class="flex flex-col w-full">`);
       _push(ssrRenderComponent(_sfc_main$j, { title: "Studio 7024" }, null, _parent));
       _push(ssrRenderComponent(_sfc_main$2, {
         label,
