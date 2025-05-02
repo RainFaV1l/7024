@@ -1,49 +1,37 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import tailwindcss from '@tailwindcss/vite';
 import vuePlugin from "@vitejs/plugin-vue";
-import path from 'path'
-import Components from 'unplugin-vue-components/vite'
-import MotionResolver from 'motion-v/resolver'
+import path from 'path';
 
 export default defineConfig({
+    server: {
+        host: '0.0.0.0',
+        port: 5173,
+        strictPort: true,
+        hmr: {
+            host: 'group7024-node',
+            protocol: 'ws',
+            port: 5173
+        }
+    },
     plugins: [
-        vuePlugin(),
-        tailwindcss(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             ssr: 'resources/js/ssr.js',
             refresh: true,
         }),
-        Components({
-            dts: true, // генерирует файл с декларациями для автокомплита
-            resolvers: [
-                MotionResolver()
-            ],
-        }),
+        vuePlugin(),
     ],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'resources/js')
-        }
-    },
-    optimizeDeps: {
-        include: ['']
-    },
-    server: {
-        hmr: {
-            host: 'localhost',  // или другой доступный адрес
-            port: 5174,
-            protocol: 'ws'
+            '@': path.resolve(__dirname, 'resources/js'),
         },
     },
-     build: {
+    build: {
         rollupOptions: {
             input: {
                 app: 'resources/js/app.js',
-                ssr: 'resources/js/ssr.js'
             }
         },
-        ssr: 'resources/js/ssr.js'
     }
 });
