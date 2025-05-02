@@ -1,215 +1,150 @@
 {
   "\u0000plugin-vue:export-helper": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
-  "node_modules/vue-toast-notification/dist/theme-bootstrap.css": [],
+  "node_modules/vue-toast-notification/dist/theme-bootstrap.css": [
+    "/build/assets/loader-BnLZGpJd.mp4",
+    "/build/assets/example-DYBaYUcw.jpg"
+  ],
   "resources/js/Components/Application.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/ArrowLink.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/ButtonComponent.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Circle.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Circle.vue?vue&type=style&index=0&lang.css": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/FooterComponent.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Form/InputComponent.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/HeaderComponent.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Loader.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Service/Service.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Service/ServiceIcon.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Service/ServiceItem.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Service/ServiceText.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Sidebar.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Components/Title.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Layouts/App.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Layouts/App.vue?vue&type=style&index=0&lang.css": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Development.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Dilesta/Components/About.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Dilesta/Components/Services.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Dilesta/Dilesta.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Errors/Error.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Index/Components/CompaniesSection.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Index/Components/GroupSection.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Index/Components/TitleComponent.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Index/Index.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Module/Components/About.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Module/Components/Example.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Module/Module.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Studio/Components/About.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Studio/Components/Services.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/Pages/Studio/Studio.vue": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
-  "resources/js/app.js": [],
+  "resources/js/app.js": [
+    "/build/assets/loader-BnLZGpJd.mp4",
+    "/build/assets/example-DYBaYUcw.jpg"
+  ],
   "resources/js/assets/images/example.jpg": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
   "resources/js/assets/video/loader.mp4": [
-    "/build/assets/Studio-CJia58dh.js",
-    "/build/assets/Studio-C7jgM295.css",
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
-  ],
-  "resources/js/ssr.js": []
+  ]
 }

@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vuePlugin from "@vitejs/plugin-vue";
 import path from 'path';
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
     server: {
@@ -9,17 +10,20 @@ export default defineConfig({
         port: 5173,
         strictPort: true,
         hmr: {
-            host: 'group7024-node',
+            host: 'localhost',
             protocol: 'ws',
             port: 5173
         }
     },
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
-            ssr: 'resources/js/ssr.js',
+            input: [
+                'resources/css/app.css',
+                'resources/js/app.js',
+            ],
         }),
         vuePlugin(),
+        tailwindcss(),
     ],
     resolve: {
         alias: {

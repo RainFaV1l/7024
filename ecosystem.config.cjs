@@ -2,7 +2,7 @@ module.exports = {
     apps: [
         {
             name: 'inertia-ssr',
-            script: 'bootstrap/ssr/ssr.js',
+            script: 'bootstrap/ssr/app.js',
             interpreter: 'node',
             watch: false,
             env: {
