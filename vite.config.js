@@ -31,7 +31,19 @@ export default defineConfig({
         include: ['']
     },
     server: {
-        host: '0.0.0.0',
-        port: 5173,
+        hmr: {
+            host: 'localhost',  // или другой доступный адрес
+            port: 5174,
+            protocol: 'ws'
+        },
+    },
+     build: {
+        rollupOptions: {
+            input: {
+                app: 'resources/js/app.js',
+                ssr: 'resources/js/ssr.js'
+            }
+        },
+        ssr: 'resources/js/ssr.js'
     }
 });
