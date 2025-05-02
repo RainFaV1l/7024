@@ -6,7 +6,7 @@ import TitleComponent from "@/Pages/Index/Components/TitleComponent.vue";
 <template>
     <section class="relative h-dvh bg-dark overflow-hidden section">
         <Circle/>
-        <div class="flex justify-center items-center h-full z-10">
+        <div class="flex justify-center items-center h-full z-10 px-[40px]">
             <TitleComponent title="GROUP 7024" subtitle="Необыкновенно"/>
         </div>
     </section>

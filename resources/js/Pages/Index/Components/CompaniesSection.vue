@@ -54,15 +54,15 @@ const scrollToPreviousSection = () => {
 </script>
 
 <template>
-    <section class="relative h-dvh bg-dark overflow-hidden section">
+    <section class="relative lg:h-dvh bg-dark overflow-hidden section" id="companies">
         <Circle/>
         <div class="z-10 h-full">
             <HeaderComponent :click="scrollToPreviousSection" :is-index="true"/>
-            <div class="h-full flex justify-between">
+            <div class="grid lg:grid-cols-[181px_1fr] h-full">
                 <Sidebar :click="scrollToPreviousSection" :is-index="true"/>
-                <div class="grid grid-cols-3 p-[40px] gap-[30px] h-[87%] w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 p-[20px] md:p-[40px] gap-[20px] md:gap-[30px] h-[87%] w-full">
                     <Service link="/studio" :services="services" :icon="CameraIcon"/>
-                    <div class="col-span-2 flex flex-col gap-[30px]">
+                    <div class="xl:col-span-2 flex flex-col gap-[20px] md:gap-[30px]">
                         <ServiceText link="/dilesta" description="Проектирование и строительство зданий и сооружений" name="DILESTA"><BuildingOfficeIcon class="size-[26px] text-white"/></ServiceText>
                         <ServiceText link="/module" description="Строительство модульных зданий" name="MODULE"><HomeModernIcon class="size-[26px] text-white"/></ServiceText>
                     </div>

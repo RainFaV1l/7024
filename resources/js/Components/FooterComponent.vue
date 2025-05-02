@@ -64,9 +64,10 @@ const menus = [
 </script>
 
 <template>
-    <footer class="relative z-10 border-t border-t-dark-border h-[320px] mt-[50px]">
-        <div class="flex items-center h-full">
-            <div class="flex flex-col pt-[50px] gap-[40px] px-[50px] border-r h-full border-r-dark-border w-[30%]">
+    <footer class="relative z-10 border-t border-t-dark-border lg:h-[320px] mt-[50px]">
+        <div class="flex flex-col lg:flex-row items-center h-full">
+            <div class="flex flex-col py-[40px] xl:py-[0] xl:pt-[50px] gap-[40px] px-[20px] md:px-[40px] lg:px-[50px]
+            border-b lg:border-r h-full border-b-dark-border lg:border-r-dark-border w-full lg:w-[30%]">
                 <div class="flex flex-col gap-[15px]">
                     <h2 class="text-[32px] text-white">GROUP 7024</h2>
                     <p class="text-sm text-white opacity-80 text-leading-tracking">© 2025 GROUP 7024. All Rights Reserved.</p>
@@ -85,7 +86,8 @@ const menus = [
                     </Link>
                 </div>
             </div>
-            <div class="flex pt-[50px] h-full items-start justify-center gap-[70px] border-r border-r-dark-border px-[70px] w-[48%]">
+            <div class="flex flex-wrap md:flex-nowrap py-[40px] xl:py-0 xl:pt-[50px] h-full items-start lg:justify-center gap-[30px] md:gap-[70px]
+            w-full xl:border-r border-r-dark-border px-[20px] md:px-[40px] lg:px-[70px] xl:w-[48%]">
                 <div v-for="menu in menus" class="flex flex-col gap-2">
                     <h4 class="font-bold uppercase text-white text-base text-leading-tracking mb-[15px] opacity-80">{{ menu.name }}</h4>
                     <Link v-show="!menu.external" :href="item.link" v-for="(item, key) in menu.items" :key="key" href="#" class="uppercase text-white
@@ -98,7 +100,7 @@ const menus = [
                     </a>
                 </div>
             </div>
-            <div class="w-[22%]"></div>
+            <div class="xl:w-[22%]"></div>
         </div>
     </footer>
 </template>

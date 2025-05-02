@@ -40,23 +40,20 @@ const getClasses = (position) => {
 </script>
 
 <template>
-    <div class="flex justify-between">
-        <div class="basis-[67%]">
-            <div class="flex flex-col items-start gap-[40px] p-[40px] h-full" :class="getClasses(props.position)">
-                <p class="text-white opacity-80 leading-[150%] tracking-[2px]">{{ props.description }}</p>
+    <div class="flex justify-between flex-col md:flex-row border-b border-dark-border">
+        <div class="basis-[67.23%] border-r  border-dark-border">
+            <div class="flex flex-col items-start gap-[40px] px-[20px] py-[40px] md:px-[40px] h-full" :class="getClasses(props.position)">
+                <p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">{{ props.description }}</p>
                 <ButtonComponent :link="props.link">{{ props.label }}</ButtonComponent>
             </div>
-            <div class="w-full bg-white h-[1px] opacity-10"></div>
         </div>
         <div class="basis-[33%]">
-            <div class="py-[40px] border-l border-b border-dark-border">
+            <div class="py-[20px] px-[0px] md:py-[40px]">
                 <div class="flex flex-col gap-[15px]">
                     <ArrowLink name="Behance" link="/"/>
                     <ArrowLink name="Pinterest" link="/"/>
                     <ArrowLink name="Vimeo" link="/"/>
                     <ArrowLink name="Youtube" link="/"/>
-                    <div class="w-full bg-white h-[1px] opacity-10 transition-all duration-300 ease-in-out
-        group-hover:opacity-100"></div>
                 </div>
             </div>
         </div>

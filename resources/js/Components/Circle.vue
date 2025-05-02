@@ -8,12 +8,16 @@
 </template>
 
 <style>
+@media screen and (min-width: 480px){
+    width: 400px;
+    height: 400px;
+}
 .circle-wrapper {
     position: absolute;
     top: 0;
     left: 0;
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     z-index: 0;
     pointer-events: none;
 }

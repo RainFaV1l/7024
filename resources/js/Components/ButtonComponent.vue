@@ -49,7 +49,7 @@ const getClassByType = (type) => {
 }
 
 const getBaseClasses = (type) => {
-    return `rounded-[4px] uppercase text-base border border-white leading-[140%] tracking-[1.5px] transition ` + getClassByType(type);
+    return `cursor-pointer rounded-[4px] uppercase text-sm md:text-base border border-white leading-[140%] tracking-[1.5px] transition ` + getClassByType(type);
 }
 </script>
 

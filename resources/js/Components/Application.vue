@@ -41,21 +41,21 @@ const submit = async () => {
 <template>
     <div class="border-t border-t-dark-border" id="application">
         <div class="flex flex-col gap-[40px]">
-            <div class="flex justify-between items-center  border-b border-b-dark-border">
-                <div class="py-[74px] px-[40px]
-                  flex items-center justify-items-start w-[42%]
-                  border-r border-r-dark-border
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-b-dark-border">
+                <div class="py-[40px] md:py-[74px] px-[20px] md:px-[40px]
+                  flex items-center justify-items-start w-full md:w-[42%]
+                  border-b md:border-r md:border-r-dark-border border-b-dark-border md:border-b-0
                 ">
-                    <h2 class="uppercase text-4xl text-white">Заявка</h2>
+                    <h2 class="uppercase text-xl sm:text-3xl md:text-4xl text-white">Заявка</h2>
                 </div>
-                <div class="w-[58%] pr-[206px] px-[40px]">
-                    <p class="text-white opacity-80 leading-[150%] tracking-[2px]">Оставьте заявку, чтобы обсудить ваш
+                <div class="w-full md:w-[58%] xl:pr-[206px] px-[20px] md:px-[40px] py-[40px]">
+                    <p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">Оставьте заявку, чтобы обсудить ваш
                         проект или получить бесплатную консультацию от наших специалистов!</p>
                 </div>
             </div>
-            <div class="px-[40px] pb-[40px]">
+            <div class="px-[20px] md:px-[40px] md:pb-[40px]">
                 <form class="flex flex-col items-start gap-[40px]" @submit.prevent="submit">
-                    <div class="flex items-center gap-[30px] w-full max-w-[85%]">
+                    <div class="flex flex-col md:flex-row items-center gap-[30px] w-full max-w-full md:max-w-[85%]">
                         <InputComponent placeholder="Имя" v-model="form.name"/>
                         <InputComponent placeholder="Телефон" v-model="form.phone" type="tel"/>
                     </div>

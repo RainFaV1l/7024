@@ -47,9 +47,9 @@ const services = [
         <Circle/>
         <div class="z-10 h-full">
             <HeaderComponent title="Group 7024" :click="() => router.visit('/')"/>
-            <div class="flex justify-between w-full">
-                <Sidebar :click="() => router.visit('/')"/>
-                <div class="flex flex-col w-[91%]">
+            <div class="grid lg:grid-cols-[181px_1fr] h-full">
+                <Sidebar :click="() => router.visit('/#companies')"/>
+                <div class="flex flex-col w-full">
                     <Title title="Studio 7024"/>
                     <About :label="label" :description="description" :link="link"/>
                     <Services :services="services"/>
