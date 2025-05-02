@@ -7,6 +7,10 @@
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
   ],
+  "resources/css/app.css": [
+    "/build/assets/loader-BnLZGpJd.mp4",
+    "/build/assets/example-DYBaYUcw.jpg"
+  ],
   "resources/js/Components/Application.vue": [
     "/build/assets/loader-BnLZGpJd.mp4",
     "/build/assets/example-DYBaYUcw.jpg"
