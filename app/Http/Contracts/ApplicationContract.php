@@ -2,9 +2,10 @@
 
 namespace App\Http\Contracts;
 
-use App\Http\Dtos\ApplicationDto;
+use App\Dtos\ApplicationDto;
+use App\Entities\ApplicationEntity;
 
 interface ApplicationContract
 {
-    public function create(ApplicationDto $applicationDto): void;
+    public function create(ApplicationDto $applicationDto): ApplicationEntity;
 }

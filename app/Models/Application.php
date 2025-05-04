@@ -2,21 +2,25 @@
 
 namespace App\Models;
 
-use App\Http\Enums\ApplicationEnum;
+use App\Enums\ApplicationStatusEnum;
+use App\Enums\ApplicationTypeEnum;
 use Illuminate\Database\Eloquent\Model;
 
 class Application extends Model
 {
     protected $fillable = [
-        'site',
+        'type',
         'name',
         'phone',
+        'status',
         'data',
         'ip',
     ];
 
     protected $casts = [
-//        'site' => ApplicationEnum::class,
         'data' => 'array',
+        'created_at' => 'timestamp',
+        'status' => ApplicationStatusEnum::class,
+        'type' => ApplicationTypeEnum::class,
     ];
 }

@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
+use App\Factories\ApplicationManager;
 use App\Http\Exceptions\SiteNotFoundException;
-use App\Http\Factories\ApplicationManager;
-use App\Http\Services\Application\StudioService;
+use App\Services\Application\StudioService;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Tests\TestCase;
 

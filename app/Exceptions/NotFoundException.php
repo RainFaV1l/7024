@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Exceptions;
+namespace App\Exceptions;
 
 use Exception;
 
-class SiteNotFoundException extends Exception
+class NotFoundException extends Exception
 {
     public function __construct($message, $code) {
         parent::__construct($message, $code);

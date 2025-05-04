@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Http\Enums;
+namespace App\Enums;
 
-enum ApplicationEnum: string
+enum ApplicationStatusEnum: string
 {
-    case STUDIO = 'studio';
-    case DILESTA = 'dilesta';
-    case MODULE = 'module';
-
+    case PENDING = 'pending';
+    case APPROVED = 'approved';
+    case REJECTED = 'rejected';
     public function label(): string
     {
         return match ($this) {
-            self::STUDIO => 'Studio',
-            self::DILESTA => 'Dilesta',
-            self::MODULE => 'Module',
+            self::PENDING => 'В ожидании',
+            self::APPROVED => 'Одобрен',
+            self::REJECTED => 'Отклонен',
         };
     }
 

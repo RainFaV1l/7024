@@ -10,6 +10,9 @@ services:
             - ./:/var/www/html            # Монтируем весь проект в контейнер
         depends_on:
             - postgres                   # Сначала должна стартовать БД
+            - redis
+        networks:
+            - group7024
 
     # Сервис базы данных PostgreSQL
     postgres:
@@ -23,6 +26,8 @@ services:
             - postgres-data:/var/lib/postgresql/data
         ports:
             - "5432:5432"                # Экспортируем порт PostgreSQL
+        networks:
+            - group7024
 
     # Сервис Node.js (Vite dev server для фронтенда)
     node:
@@ -43,6 +48,8 @@ services:
         # ^ При старте контейнера устанавливаем зависимости и запускаем Vite dev server с флагом --host (слушать на 0.0.0.0)
         depends_on:
             - php                       # Laravel (бэкенд) должен быть запущен
+        networks:
+            - group7024
 
     # Сервис веб-сервера Nginx
     nginx:
@@ -57,8 +64,26 @@ services:
             - php                           # Nginx запускается после PHP-FPM
             - postgres                      # и после фронтенд-сервера (для dev-режима)
             - node
+        networks:
+            - group7024
+
+    # База данных для хранения кеша и очередей в оперативной памяти
+    redis:
+        image: redis:latest
+        container_name: group7024-redis
+        ports:
+            - "6379:6379"
+        volumes:
+            - redis-data:/data
+        networks:
+            - group7024
 
 # Объявляем Named Volume для данных БД, чтобы они сохранялись между перезапусками
 volumes:
     node_modules:
     postgres-data:
+    redis-data:
+
+networks:
+    group7024:
+        driver: bridge

@@ -9,10 +9,11 @@ return new class extends Migration {
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->string('site');
+            $table->string('type');
             $table->string('name');
             $table->string('phone');
             $table->string('ip');
+            $table->string('status')->default('pending');
             $table->jsonb('data')->nullable();
             $table->timestamps();
         });

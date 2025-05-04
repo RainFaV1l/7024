@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
-use App\Http\Enums\ApplicationEnum;
+use App\Enums\ApplicationTypeEnum;
 use App\Models\Application;
-
+use MoonShine\Contracts\UI\ComponentContract;
+use MoonShine\Contracts\UI\FieldContract;
 use MoonShine\Laravel\Resources\ModelResource;
 use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Fields\ID;
-use MoonShine\Contracts\UI\FieldContract;
-use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\UI\Fields\Json;
 use MoonShine\UI\Fields\Select;
 use MoonShine\UI\Fields\Text;
@@ -36,7 +35,7 @@ class ApplicationResource extends ModelResource
             ID::make()->sortable(),
             Text::make('Имя', 'name')->sortable(),
             Text::make('Телефон', 'phone'),
-            Select::make('Сайт', 'site', fn($item) => ApplicationEnum::tryFrom($item->type)->label())->options(ApplicationEnum::options()),
+            Select::make('Сайт', 'type', fn($item) => ApplicationTypeEnum::tryFrom($item->type)->label())->options(ApplicationTypeEnum::options()),
             Text::make('IP', 'ip'),
             Json::make('Данные', 'data'),
         ];
@@ -52,7 +51,7 @@ class ApplicationResource extends ModelResource
                 ID::make(),
                 Text::make('Имя', 'name')->sortable(),
                 Text::make('Телефон', 'phone'),
-                Select::make('Сайт', 'site', fn($item) => ApplicationEnum::tryFrom($item)->label())->options(ApplicationEnum::options()),
+                Select::make('Сайт', 'site', fn($item) => ApplicationTypeEnum::tryFrom($item)->label())->options(ApplicationTypeEnum::options()),
                 Text::make('IP', 'ip'),
                 Json::make('Данные', 'data')->nullable(),
             ])
@@ -68,7 +67,7 @@ class ApplicationResource extends ModelResource
             ID::make(),
             Text::make('Имя', 'name')->sortable(),
             Text::make('Телефон', 'phone'),
-            Select::make('Сайт', 'site', fn($item) => ApplicationEnum::tryFrom($item)->label())->options(ApplicationEnum::options()),
+            Select::make('Сайт', 'site', fn($item) => ApplicationTypeEnum::tryFrom($item)->label())->options(ApplicationTypeEnum::options()),
             Text::make('IP', 'ip'),
             Json::make('Данные', 'data'),
         ];

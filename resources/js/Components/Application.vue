@@ -1,6 +1,6 @@
 <script setup>
 import InputComponent from "@/Components/Form/InputComponent.vue";
-import {ref, reactive} from "vue";
+import {reactive, ref} from "vue";
 import {Link, usePage} from "@inertiajs/vue3";
 import ButtonComponent from "@/Components/ButtonComponent.vue";
 import axios from "axios";
@@ -23,7 +23,7 @@ const submit = async () => {
     }
 
     try {
-        await axios.post('/application/create', form)
+        await axios.post(route('application.create'), form)
 
         toast.success('Заявка отправлена!', {duration: 8000})
 
