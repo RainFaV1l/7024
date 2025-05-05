@@ -29,9 +29,9 @@ final class ApplicationEntity
             name: $application->name,
             phone: $application->phone,
             ip: $application->ip,
-            status: $application->status,
+            status: ApplicationStatusEnum::tryFrom($application->status),
             data: $application->data,
-            type: $application->type,
+            type: ApplicationTypeEnum::tryFrom($application->type),
             createdAt: Carbon::parse($application->created_at),
         );
     }

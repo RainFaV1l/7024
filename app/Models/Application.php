@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Enums\ApplicationStatusEnum;
-use App\Enums\ApplicationTypeEnum;
 use Illuminate\Database\Eloquent\Model;
 
 class Application extends Model
@@ -20,7 +18,5 @@ class Application extends Model
     protected $casts = [
         'data' => 'array',
         'created_at' => 'timestamp',
-        'status' => ApplicationStatusEnum::class,
-        'type' => ApplicationTypeEnum::class,
     ];
 }

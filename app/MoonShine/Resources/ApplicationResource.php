@@ -37,8 +37,10 @@ class ApplicationResource extends ModelResource
             ID::make()->sortable(),
             Text::make('Имя', 'name')->sortable(),
             Text::make('Телефон', 'phone'),
-            Select::make('Сайт', 'type', fn($item) => $item->type->label())->options(ApplicationTypeEnum::options()),
-            Select::make('Статус', 'status', fn($item) => $item->status->label())->options(ApplicationStatusEnum::options()),
+            Select::make('Сайт', 'type', fn(Application $item) => ApplicationTypeEnum::tryFrom($item->type)?->label())
+                ->options(ApplicationTypeEnum::options()),
+            Select::make('Статус', 'status', fn(Application $item) => ApplicationTypeEnum::tryFrom($item->status)?->label())
+                ->options(ApplicationTypeEnum::options()),
             Text::make('IP', 'ip'),
             Json::make('Данные', 'data'),
         ];
@@ -54,8 +56,10 @@ class ApplicationResource extends ModelResource
                 ID::make()->sortable(),
                 Text::make('Имя', 'name')->sortable(),
                 Text::make('Телефон', 'phone'),
-                Select::make('Сайт', 'type', fn($item) => $item->type->label())->options(ApplicationTypeEnum::options()),
-                Select::make('Статус', 'status', fn($item) => $item->status->label())->options(ApplicationStatusEnum::options()),
+                Select::make('Сайт', 'type', fn(Application $item) => ApplicationTypeEnum::tryFrom($item->type)?->label())
+                    ->options(ApplicationTypeEnum::options()),
+                Select::make('Статус', 'status', fn(Application $item) => ApplicationTypeEnum::tryFrom($item->status)?->label())
+                    ->options(ApplicationTypeEnum::options()),
                 Text::make('IP', 'ip'),
                 Json::make('Данные', 'data'),
             ])
@@ -71,8 +75,10 @@ class ApplicationResource extends ModelResource
             ID::make()->sortable(),
             Text::make('Имя', 'name')->sortable(),
             Text::make('Телефон', 'phone'),
-            Select::make('Сайт', 'type', fn($item) => $item->type->label())->options(ApplicationTypeEnum::options()),
-            Select::make('Статус', 'status', fn($item) => $item->status->label())->options(ApplicationStatusEnum::options()),
+            Select::make('Сайт', 'type', fn(Application $item) => ApplicationTypeEnum::tryFrom($item->type)?->label())
+                ->options(ApplicationTypeEnum::options()),
+            Select::make('Статус', 'status', fn(Application $item) => ApplicationTypeEnum::tryFrom($item->status)?->label())
+                ->options(ApplicationTypeEnum::options()),
             Text::make('IP', 'ip'),
             Json::make('Данные', 'data'),
         ];
