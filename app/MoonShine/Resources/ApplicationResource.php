@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
+use App\Enums\ApplicationStatusEnum;
+use App\Enums\ApplicationTypeEnum;
 use App\Models\Application;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Contracts\UI\FieldContract;
@@ -34,8 +36,8 @@ class ApplicationResource extends ModelResource
             ID::make()->sortable(),
             Text::make('Имя', 'name')->sortable(),
             Text::make('Телефон', 'phone'),
-            Select::make('Сайт', 'type', fn($item) => $item->type->label()),
-            Select::make('Статус', 'status', fn($item) => $item->status->label()),
+            Select::make('Сайт', 'type', fn($item) => $item->type->label())->options(ApplicationTypeEnum::options()),
+            Select::make('Статус', 'status', fn($item) => $item->status->label())->options(ApplicationStatusEnum::options()),
             Text::make('IP', 'ip'),
             Json::make('Данные', 'data'),
         ];
@@ -51,8 +53,8 @@ class ApplicationResource extends ModelResource
                 ID::make()->sortable(),
                 Text::make('Имя', 'name')->sortable(),
                 Text::make('Телефон', 'phone'),
-                Select::make('Сайт', 'type', fn($item) => $item->type->label()),
-                Select::make('Статус', 'status', fn($item) => $item->status->label()),
+                Select::make('Сайт', 'type', fn($item) => $item->type->label())->options(ApplicationTypeEnum::options()),
+                Select::make('Статус', 'status', fn($item) => $item->status->label())->options(ApplicationStatusEnum::options()),
                 Text::make('IP', 'ip'),
                 Json::make('Данные', 'data'),
             ])
@@ -68,8 +70,8 @@ class ApplicationResource extends ModelResource
             ID::make()->sortable(),
             Text::make('Имя', 'name')->sortable(),
             Text::make('Телефон', 'phone'),
-            Select::make('Сайт', 'type', fn($item) => $item->type->label()),
-            Select::make('Статус', 'status', fn($item) => $item->status->label()),
+            Select::make('Сайт', 'type', fn($item) => $item->type->label())->options(ApplicationTypeEnum::options()),
+            Select::make('Статус', 'status', fn($item) => $item->status->label())->options(ApplicationStatusEnum::options()),
             Text::make('IP', 'ip'),
             Json::make('Данные', 'data'),
         ];
