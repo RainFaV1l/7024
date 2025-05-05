@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
+use App\Enums\ApplicationStatusEnum;
 use App\Enums\ApplicationTypeEnum;
 use App\Models\Application;
 use MoonShine\Contracts\UI\ComponentContract;
@@ -35,7 +36,8 @@ class ApplicationResource extends ModelResource
             ID::make()->sortable(),
             Text::make('Имя', 'name')->sortable(),
             Text::make('Телефон', 'phone'),
-            Select::make('Сайт', 'type', fn($item) => ApplicationTypeEnum::tryFrom($item->type)->label())->options(ApplicationTypeEnum::options()),
+            Select::make('Сайт', 'type', fn($item) => $item->type->label()),
+            Select::make('Статус', 'status', fn($item) => $item->status->label()),
             Text::make('IP', 'ip'),
             Json::make('Данные', 'data'),
         ];
@@ -48,12 +50,13 @@ class ApplicationResource extends ModelResource
     {
         return [
             Box::make([
-                ID::make(),
+                ID::make()->sortable(),
                 Text::make('Имя', 'name')->sortable(),
                 Text::make('Телефон', 'phone'),
-                Select::make('Сайт', 'site', fn($item) => ApplicationTypeEnum::tryFrom($item)->label())->options(ApplicationTypeEnum::options()),
+                Select::make('Сайт', 'type', fn($item) => ApplicationTypeEnum::tryFrom($item->type)->label())->options(ApplicationTypeEnum::options()),
+                Select::make('Статус', 'status', fn($item) => ApplicationStatusEnum::tryFrom($item->type)->label())->options(ApplicationStatusEnum::options()),
                 Text::make('IP', 'ip'),
-                Json::make('Данные', 'data')->nullable(),
+                Json::make('Данные', 'data'),
             ])
         ];
     }
@@ -64,10 +67,11 @@ class ApplicationResource extends ModelResource
     protected function detailFields(): iterable
     {
         return [
-            ID::make(),
+            ID::make()->sortable(),
             Text::make('Имя', 'name')->sortable(),
             Text::make('Телефон', 'phone'),
-            Select::make('Сайт', 'site', fn($item) => ApplicationTypeEnum::tryFrom($item)->label())->options(ApplicationTypeEnum::options()),
+            Select::make('Сайт', 'type', fn($item) => ApplicationTypeEnum::tryFrom($item->type)->label())->options(ApplicationTypeEnum::options()),
+            Select::make('Статус', 'status', fn($item) => ApplicationStatusEnum::tryFrom($item->type)->label())->options(ApplicationStatusEnum::options()),
             Text::make('IP', 'ip'),
             Json::make('Данные', 'data'),
         ];
@@ -83,6 +87,7 @@ class ApplicationResource extends ModelResource
     {
         return [
             'type' => 'required|string',
+            'status' => 'required|string',
             'name' => 'required|string',
             'phone' => 'required|string',
             'data' => 'nullable|json',
