@@ -7,6 +7,7 @@ namespace App\MoonShine\Resources;
 use App\Enums\ApplicationStatusEnum;
 use App\Enums\ApplicationTypeEnum;
 use App\Models\Application;
+use Illuminate\Validation\Rules\Enum;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Contracts\UI\FieldContract;
 use MoonShine\Laravel\Resources\ModelResource;
@@ -86,8 +87,8 @@ class ApplicationResource extends ModelResource
     protected function rules(mixed $item): array
     {
         return [
-            'type' => 'required|string',
-            'status' => 'required|string',
+            'type' => ['required', new Enum(ApplicationTypeEnum::class)],
+            'status' => ['required', new Enum(ApplicationStatusEnum::class)],
             'name' => 'required|string',
             'phone' => 'required|string',
             'data' => 'nullable|json',
