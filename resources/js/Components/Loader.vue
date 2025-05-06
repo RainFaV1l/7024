@@ -1,6 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import {onMounted, ref} from 'vue';
 import video from '@/assets/video/loader.mp4';
+import mobileVideo from '@/assets/video/mobile-loader.mp4';
 
 const showLoader = ref(true);      // Показывает блок с видео
 const isFadingOut = ref(false);    // Плавное исчезновение
@@ -32,12 +33,21 @@ onMounted(() => {
     >
         <video
             ref="loaderVideo"
-            class="h-[70%] sm:w-full sm:h-full object-cover"
+            class="h-[70%] sm:w-full sm:h-full object-cover hidden md:block"
             autoplay
             muted
             playsinline
         >
             <source :src="video" type="video/mp4" />
+        </video>
+        <video
+            ref="loaderVideo"
+            class="h-[70%] sm:w-full sm:h-full object-cover md:hidden"
+            autoplay
+            muted
+            playsinline
+        >
+            <source :src="mobileVideo" type="video/mp4" />
         </video>
     </div>
 </template>
