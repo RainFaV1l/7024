@@ -90,7 +90,7 @@ const submit = async () => {
                         </div>
                         <div class="flex flex-col gap-2 w-full">
                             <InputComponent placeholder="Телефон" v-model="form.phone" type="tel" :error="errors?.[1]?.field === 'phone'"/>
-                            <p class="text-red-500 text-sm" v-show="errors?.[1]?.field === 'name'">{{ errors?.[1]?.message }}</p>
+                            <p class="text-red-500 text-sm" v-show="errors?.[1]?.field === 'phone'">{{ errors?.[1]?.message }}</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-[15px]">
