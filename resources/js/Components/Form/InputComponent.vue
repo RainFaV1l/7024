@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted, ref, watch, computed } from "vue"
+import {computed, nextTick, onMounted, onUnmounted, ref, watch} from "vue"
 import IMask from 'imask'
 
 const props = defineProps({
@@ -31,13 +31,13 @@ const props = defineProps({
     readonly: {
         type: Boolean,
         default: false
-    }
+    },
 })
 
 const emit = defineEmits(['update:modelValue'])
 
-const inputRef = ref(null)
-let mask = null
+let mask
+const inputValue = ref(null)
 
 const inputClasses = computed(() => {
     let base = `
@@ -61,10 +61,11 @@ const inputClasses = computed(() => {
 })
 
 onMounted(() => {
-    if (inputRef.value && props.type === 'tel') {
-        mask = IMask(inputRef.value, {
-            mask: '+{7} (000) 000-00-00',
+    if (props.type === 'tel') {
+        mask = IMask(inputValue.value, {
+            mask: '+{7}0000000000',
             lazy: true,
+            overwrite: 'shift'
         })
 
         mask.on('accept', () => {
@@ -79,32 +80,38 @@ onUnmounted(() => {
     }
 })
 
+watch(inputValue, async node => {
+    if (!node || props.type !== 'tel') return        // ещё нет элемента
+
+    await nextTick()                                // убеждаемся, что DOM готов
+
+    mask = IMask(node, {
+        mask: '+{7} (000) 000 00 00',
+        lazy: true,
+        overwrite: 'shift',
+    })
+
+    mask.on('accept', () => emit('update:modelValue', mask.value))
+})
+
 watch(() => props.modelValue, (newValue) => {
-    if (mask) {
-        if (mask.value !== newValue) {
-            mask.updateOptions({ lazy: false })
-            mask.value = newValue
-        }
-    } else if (inputRef.value) {
-        inputRef.value.value = newValue
+    if (!mask) return
+
+    if (newValue === '') {
+        mask.updateOptions({lazy: true})
+        mask.value = ''
+    }
+
+    else if (newValue !== mask.value) {
+        mask.updateOptions({lazy: false})
+        mask.value = newValue
     }
 })
 </script>
 
 <template>
     <input
-        ref="inputRef"
-        v-if="type === 'tel'"
-        :placeholder="placeholder"
-        type="text"
-        :readonly="readonly"
-        :disabled="disabled"
-        :class="inputClasses"
-    />
-
-    <input
-        v-else
-        ref="inputRef"
+        ref="inputValue"
         :placeholder="placeholder"
         :type="type"
         :readonly="readonly"
