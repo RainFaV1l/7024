@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use App\Factories\ApplicationManager;
 use App\Factories\BotManager;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Telegram\Bot\Exceptions\TelegramSDKException;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,9 +20,10 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
+     * @throws TelegramSDKException
      */
     public function boot(): void
     {
-        URL::forceHttps();
+//        URL::forceHttps();
     }
 }

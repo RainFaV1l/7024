@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Dtos\ApplicationDto;
 use App\Enums\ApplicationTypeEnum;
+use App\Enums\BotEnum;
 use App\Exceptions\NotFoundException;
 use App\Factories\ApplicationManager;
+use App\Factories\BotManager;
 use App\Http\Requests\ApplicationRequest;
 use App\Jobs\SendApplicationJob;
 use Illuminate\Contracts\Container\BindingResolutionException;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ApplicationController extends Controller
 {
@@ -33,7 +35,15 @@ class ApplicationController extends Controller
         return redirect()->back();
     }
 
-    public function webhook(Request $request) {
-        // Реализовать функционал получения ответа от кнопок через Factory
+    /**
+     * @throws NotFoundException
+     * @throws BindingResolutionException
+     */
+    public function handle(string $secret) {
+        if($secret !== config('telegram.bots.mybot.webhook_secret')) {
+            throw new NotFoundHttpException();
+        }
+
+        app(BotManager::class)->make(BotEnum::TELEGRAM)->webhook();
     }
 }

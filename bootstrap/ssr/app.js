@@ -1,4 +1,4 @@
-import { ref, onMounted, mergeProps, unref, useSSRContext, withCtx, createVNode, renderSlot, toDisplayString, createTextVNode, resolveDynamicComponent, createBlock, openBlock, computed, onUnmounted, watch, reactive, Fragment, renderList, createApp, h } from "vue";
+import { ref, onMounted, mergeProps, unref, useSSRContext, withCtx, createVNode, renderSlot, toDisplayString, createTextVNode, resolveDynamicComponent, createBlock, openBlock, computed, onUnmounted, watch, nextTick, reactive, Fragment, renderList, createApp, h } from "vue";
 import { ssrRenderAttrs, ssrRenderAttr, ssrRenderComponent, ssrRenderSlot, ssrRenderStyle, ssrRenderClass, ssrInterpolate, ssrRenderList, ssrRenderVNode, ssrIncludeBooleanAttr, ssrLooseContain } from "vue/server-renderer";
 import { usePage, Head, Link, router, createInertiaApp } from "@inertiajs/vue3";
 import { ArrowUpRightIcon, PhotoIcon, RocketLaunchIcon, HomeModernIcon, VideoCameraIcon, GlobeAltIcon, CameraIcon, BuildingOfficeIcon, WindowIcon } from "@heroicons/vue/24/outline/index.js";
@@ -8,7 +8,9 @@ import ToastPlugin, { useToast } from "vue-toast-notification";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin.js";
 import { MotionPlugin } from "@vueuse/motion";
+import { ZiggyVue } from "ziggy-js";
 const video = "/build/assets/loader-BnLZGpJd.mp4";
+const mobileVideo = "/build/assets/mobile-loader-CAMWWouV.mp4";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -39,7 +41,7 @@ const _sfc_main$t = {
             "fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-1000",
             isFadingOut.value ? "opacity-0" : "opacity-100"
           ]
-        }, _attrs))} data-v-b4bb8df5><video class="h-[70%] sm:w-full sm:h-full object-cover" autoplay muted playsinline data-v-b4bb8df5><source${ssrRenderAttr("src", unref(video))} type="video/mp4" data-v-b4bb8df5></video></div>`);
+        }, _attrs))} data-v-dafbc246><video class="h-[70%] sm:w-full sm:h-full object-cover hidden md:block" autoplay muted playsinline data-v-dafbc246><source${ssrRenderAttr("src", unref(video))} type="video/mp4" data-v-dafbc246></video><video class="w-full h-full object-cover md:hidden" autoplay muted playsinline data-v-dafbc246><source${ssrRenderAttr("src", unref(mobileVideo))} type="video/mp4" data-v-dafbc246></video></div>`);
       } else {
         _push(`<!---->`);
       }
@@ -52,7 +54,7 @@ _sfc_main$t.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Loader.vue");
   return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const Loader = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-b4bb8df5"]]);
+const Loader = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-dafbc246"]]);
 const _sfc_main$s = {
   __name: "App",
   __ssrInlineRender: true,
@@ -369,6 +371,10 @@ const _sfc_main$m = {
       type: Function,
       required: true
     },
+    backClick: {
+      type: Function,
+      required: true
+    },
     title: {
       type: String,
       required: false,
@@ -382,7 +388,7 @@ const _sfc_main$m = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "relative h-[68px] sm:h-[84px] md:min-h-[129px]" }, _attrs))}><div class="${ssrRenderClass([__props.isIndex ? "absolute" : "fixed", "w-full z-10 backdrop-blur-2xl"])}"><header class="p-[20px] md:p-[40px]"><button class="text-xl sm:text-[32px] uppercase text-white cursor-pointer text-left">${ssrInterpolate(__props.title)}</button></header><div class="w-full bg-white h-[1px] opacity-10"></div></div></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "relative h-[68px] sm:h-[84px] md:min-h-[129px]" }, _attrs))}><div class="${ssrRenderClass([__props.isIndex ? "absolute" : "fixed", "w-full z-10 backdrop-blur-2xl"])}"><header class="p-[20px] md:p-[40px] flex justify-between"><div class="cursor-pointer lg:hidden"><svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.292893 7.29289C-0.0976311 7.68342 -0.0976311 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292893 7.29289ZM43 7L1 7V9L43 9V7Z" fill="white" fill-opacity="0.8"></path></svg></div><button class="text-xl sm:text-[32px] uppercase text-white cursor-pointer text-left">${ssrInterpolate(__props.title)}</button></header><div class="w-full bg-white h-[1px] opacity-10"></div></div></div>`);
     };
   }
 };
@@ -408,7 +414,7 @@ const _sfc_main$l = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "relative hidden lg:flex flex-col justify-start w-[181px]" }, _attrs))}><div class="${ssrRenderClass([__props.isIndex ? "absolute" : "fixed", "h-full flex flex-col justify-start"])}"><div class="absolute bg-white opacity-10 h-full right-[0px] w-px"></div><div class="flex items-start justify-start flex-col gap-[60px] p-[50px]"><div class="block cursor-pointer"><svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.292893 7.29289C-0.0976311 7.68342 -0.0976311 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292893 7.29289ZM43 7L1 7V9L43 9V7Z" fill="white" fill-opacity="0.8"></path></svg></div><div class="text-white text-lg uppercase tracking-[1.5px] opacity-80 whitespace-nowrap transform -rotate-90 -ml-14 mt-12 cursor-pointer">GROUP 7024 </div></div><div class="${ssrRenderClass([__props.isIndex ? "absolute left-[40px] top-[760px]" : "fixed left-[40px] bottom-[40px]", "flex items-center gap-[15px]"])}">`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "relative hidden lg:flex flex-col justify-start w-[182px]" }, _attrs))}><div class="${ssrRenderClass([__props.isIndex ? "absolute" : "fixed", "h-full flex flex-col justify-start"])}"><div class="absolute bg-white opacity-10 h-full right-[-3px] w-px"></div><div class="flex items-start justify-start flex-col gap-[60px] p-[50px]"><div class="block cursor-pointer"><svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.292893 7.29289C-0.0976311 7.68342 -0.0976311 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292893 7.29289ZM43 7L1 7V9L43 9V7Z" fill="white" fill-opacity="0.8"></path></svg></div><div class="text-white text-lg uppercase tracking-[1.5px] opacity-80 whitespace-nowrap transform -rotate-90 -ml-14 mt-12 cursor-pointer">GROUP 7024 </div></div><div class="${ssrRenderClass([__props.isIndex ? "absolute left-[40px] top-[760px]" : "fixed left-[40px] bottom-[40px]", "flex items-center gap-[15px]"])}">`);
       _push(ssrRenderComponent(unref(Link), {
         href: "",
         class: "hover:opacity-60 transition-all ease-in-out"
@@ -544,8 +550,8 @@ const _sfc_main$i = {
   setup(__props, { emit: __emit }) {
     const props = __props;
     const emit = __emit;
-    const inputRef = ref(null);
-    let mask = null;
+    let mask;
+    const inputValue = ref(null);
     const inputClasses = computed(() => {
       let base = `
     w-full bg-transparent placeholder:text-white placeholder:opacity-80 text-white
@@ -565,10 +571,11 @@ const _sfc_main$i = {
       return `${base} ${sizeClass} ${borderColor} ${disabledClass}`;
     });
     onMounted(() => {
-      if (inputRef.value && props.type === "tel") {
-        mask = IMask(inputRef.value, {
-          mask: "+{7} (000) 000-00-00",
-          lazy: true
+      if (props.type === "tel") {
+        mask = IMask(inputValue.value, {
+          mask: "+{7}0000000000",
+          lazy: true,
+          overwrite: "shift"
         });
         mask.on("accept", () => {
           emit("update:modelValue", mask.value);
@@ -580,39 +587,37 @@ const _sfc_main$i = {
         mask.destroy();
       }
     });
+    watch(inputValue, async (node) => {
+      if (!node || props.type !== "tel") return;
+      await nextTick();
+      mask = IMask(node, {
+        mask: "+{7} (000) 000 00 00",
+        lazy: true,
+        overwrite: "shift"
+      });
+      mask.on("accept", () => emit("update:modelValue", mask.value));
+    });
     watch(() => props.modelValue, (newValue) => {
-      if (mask) {
-        if (mask.value !== newValue) {
-          mask.updateOptions({ lazy: false });
-          mask.value = newValue;
-        }
-      } else if (inputRef.value) {
-        inputRef.value.value = newValue;
+      if (!mask) return;
+      if (newValue === "") {
+        mask.updateOptions({ lazy: true });
+        mask.value = "";
+      } else if (newValue !== mask.value) {
+        mask.updateOptions({ lazy: false });
+        mask.value = newValue;
       }
     });
     return (_ctx, _push, _parent, _attrs) => {
-      if (__props.type === "tel") {
-        _push(`<input${ssrRenderAttrs(mergeProps({
-          ref_key: "inputRef",
-          ref: inputRef,
-          placeholder: __props.placeholder,
-          type: "text",
-          readonly: __props.readonly,
-          disabled: __props.disabled,
-          class: inputClasses.value
-        }, _attrs))}>`);
-      } else {
-        _push(`<input${ssrRenderAttrs(mergeProps({
-          ref_key: "inputRef",
-          ref: inputRef,
-          placeholder: __props.placeholder,
-          type: __props.type,
-          readonly: __props.readonly,
-          disabled: __props.disabled,
-          value: __props.modelValue,
-          class: inputClasses.value
-        }, _attrs))}>`);
-      }
+      _push(`<input${ssrRenderAttrs(mergeProps({
+        ref_key: "inputValue",
+        ref: inputValue,
+        placeholder: __props.placeholder,
+        type: __props.type,
+        readonly: __props.readonly,
+        disabled: __props.disabled,
+        value: __props.modelValue,
+        class: inputClasses.value
+      }, _attrs))}>`);
     };
   }
 };
@@ -629,18 +634,39 @@ const _sfc_main$h = {
     const checked = ref(true);
     const page = usePage();
     const toast = useToast();
+    const errors = ref([]);
     const form = reactive({
       name: "",
       phone: "",
       type: page.props.type
     });
+    const validator = () => {
+      if (form.name === "") {
+        errors.value.push({
+          field: "name",
+          message: "Поле имя обязательно для заполнения."
+        });
+      }
+      if (form.phone === "") {
+        errors.value.push({
+          field: "phone",
+          message: "Поле телефон обязательно для заполнения."
+        });
+      } else {
+        errors.value = [];
+      }
+    };
     const submit = async () => {
       if (!checked.value) {
         toast.error("Согласитесь с нашими условиями.", { duration: 3e3 });
         return;
       }
+      validator();
+      if (errors.value.length !== 0) {
+        return;
+      }
       try {
-        await axios.post("/application/create", form);
+        await axios.post(route("application.create"), form);
         toast.success("Заявка отправлена!", { duration: 8e3 });
         Object.assign(form, { name: "", phone: "" });
       } catch (error) {
@@ -652,22 +678,26 @@ const _sfc_main$h = {
       }
     };
     return (_ctx, _push, _parent, _attrs) => {
+      var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l;
       _push(`<div${ssrRenderAttrs(mergeProps({
         class: "border-t border-t-dark-border",
         id: "application"
-      }, _attrs))}><div class="flex flex-col gap-[40px]"><div class="flex flex-col md:flex-row justify-between items-center border-b border-b-dark-border"><div class="py-[40px] md:py-[74px] px-[20px] md:px-[40px] flex items-center justify-items-start w-full md:w-[42%] border-b md:border-r md:border-r-dark-border border-b-dark-border md:border-b-0"><h2 class="uppercase text-xl sm:text-3xl md:text-4xl text-white">Заявка</h2></div><div class="w-full md:w-[58%] xl:pr-[206px] px-[20px] md:px-[40px] py-[40px]"><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">Оставьте заявку, чтобы обсудить ваш проект или получить бесплатную консультацию от наших специалистов!</p></div></div><div class="px-[20px] md:px-[40px] md:pb-[40px]"><form class="flex flex-col items-start gap-[40px]"><div class="flex flex-col md:flex-row items-center gap-[30px] w-full max-w-full md:max-w-[85%]">`);
+      }, _attrs))}><div class="flex flex-col gap-[40px]"><div class="flex flex-col md:flex-row justify-between items-center border-b border-b-dark-border"><div class="py-[40px] md:py-[74px] px-[20px] md:px-[40px] flex items-center justify-items-start w-full md:w-[42%] border-b md:border-r md:border-r-dark-border border-b-dark-border md:border-b-0"><h2 class="uppercase text-xl sm:text-3xl md:text-4xl text-white">Заявка</h2></div><div class="w-full md:w-[58%] xl:pr-[206px] px-[20px] md:px-[40px] py-[40px]"><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">Оставьте заявку, чтобы обсудить ваш проект или получить бесплатную консультацию от наших специалистов!</p></div></div><div class="px-[20px] md:px-[40px] md:pb-[40px]"><form class="flex flex-col items-start gap-[40px]"><div class="flex flex-col md:flex-row items-center gap-[30px] w-full max-w-full md:max-w-[85%]"><div class="flex flex-col gap-2 w-full">`);
       _push(ssrRenderComponent(_sfc_main$i, {
         placeholder: "Имя",
         modelValue: form.name,
-        "onUpdate:modelValue": ($event) => form.name = $event
+        "onUpdate:modelValue": ($event) => form.name = $event,
+        error: ((_b = (_a = errors.value) == null ? void 0 : _a[0]) == null ? void 0 : _b.field) === "name"
       }, null, _parent));
+      _push(`<p class="text-red-500 text-sm" style="${ssrRenderStyle(((_d = (_c = errors.value) == null ? void 0 : _c[0]) == null ? void 0 : _d.field) === "name" ? null : { display: "none" })}">${ssrInterpolate((_f = (_e = errors.value) == null ? void 0 : _e[0]) == null ? void 0 : _f.message)}</p></div><div class="flex flex-col gap-2 w-full">`);
       _push(ssrRenderComponent(_sfc_main$i, {
         placeholder: "Телефон",
         modelValue: form.phone,
         "onUpdate:modelValue": ($event) => form.phone = $event,
-        type: "tel"
+        type: "tel",
+        error: ((_h = (_g = errors.value) == null ? void 0 : _g[1]) == null ? void 0 : _h.field) === "phone"
       }, null, _parent));
-      _push(`</div><div class="flex items-center gap-[15px]"><div class="inline-flex items-center cursor-pointer"><input id="privacy" type="checkbox"${ssrIncludeBooleanAttr(Array.isArray(checked.value) ? ssrLooseContain(checked.value, null) : checked.value) ? " checked" : ""} class="peer hidden"><label for="privacy" class="w-[24px] h-[24px] border border-dark-border rounded-[2px] cursor-pointer bg-transparent flex items-center justify-center peer-checked:border-white peer-checked:bg-white transition">`);
+      _push(`<p class="text-red-500 text-sm" style="${ssrRenderStyle(((_j = (_i = errors.value) == null ? void 0 : _i[1]) == null ? void 0 : _j.field) === "name" ? null : { display: "none" })}">${ssrInterpolate((_l = (_k = errors.value) == null ? void 0 : _k[1]) == null ? void 0 : _l.message)}</p></div></div><div class="flex items-center gap-[15px]"><div class="inline-flex items-center cursor-pointer"><input id="privacy" type="checkbox"${ssrIncludeBooleanAttr(Array.isArray(checked.value) ? ssrLooseContain(checked.value, null) : checked.value) ? " checked" : ""} class="peer hidden"><label for="privacy" class="w-[24px] h-[24px] border border-dark-border rounded-[2px] cursor-pointer bg-transparent flex items-center justify-center peer-checked:border-white peer-checked:bg-white transition">`);
       if (checked.value) {
         _push(`<svg class="w-4 h-4 text-dark" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>`);
       } else {
@@ -782,7 +812,7 @@ const _sfc_main$g = {
       }
     ];
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<footer${ssrRenderAttrs(mergeProps({ class: "relative z-10 border-t border-t-dark-border lg:h-[320px] mt-[50px]" }, _attrs))}><div class="flex flex-col lg:flex-row items-center h-full"><div class="flex flex-col py-[40px] xl:py-[0] xl:pt-[50px] gap-[40px] px-[20px] md:px-[40px] lg:px-[50px] border-b lg:border-r h-full border-b-dark-border lg:border-r-dark-border w-full lg:w-[30%]"><div class="flex flex-col gap-[15px]"><h2 class="text-[32px] text-white">GROUP 7024</h2><p class="text-sm text-white opacity-80 text-leading-tracking">© 2025 GROUP 7024. All Rights Reserved.</p></div><div class="flex items-center gap-[15px]">`);
+      _push(`<footer${ssrRenderAttrs(mergeProps({ class: "relative z-10 border-t border-t-dark-border lg:h-[320px] mt-[50px]" }, _attrs))}><div class="flex flex-col lg:flex-row items-center h-full"><div class="flex flex-col py-[40px] xl:py-[0] xl:pt-[50px] gap-[40px] px-[20px] md:px-[40px] lg:px-[50px] border-b lg:border-r h-full border-b-dark-border lg:border-r-dark-border w-full lg:w-[30%]"><div class="flex flex-col gap-[15px]"><h2 class="text-xl sm:text-[32px] text-white">GROUP 7024</h2><p class="text-sm text-white opacity-80 text-leading-tracking">© 2025 GROUP 7024. All Rights Reserved.</p></div><div class="flex items-center gap-[15px]">`);
       _push(ssrRenderComponent(unref(Link), {
         href: "",
         class: "hover:opacity-60 transition-all ease-in-out"
@@ -839,7 +869,7 @@ const _sfc_main$g = {
       }, _parent));
       _push(`</div></div><div class="flex flex-wrap md:flex-nowrap py-[40px] xl:py-0 xl:pt-[50px] h-full items-start lg:justify-center gap-[30px] md:gap-[70px] w-full xl:border-r border-r-dark-border px-[20px] md:px-[40px] lg:px-[70px] xl:w-[48%]"><!--[-->`);
       ssrRenderList(menus, (menu) => {
-        _push(`<div class="flex flex-col gap-2"><h4 class="font-bold uppercase text-white text-base text-leading-tracking mb-[15px] opacity-80">${ssrInterpolate(menu.name)}</h4><!--[-->`);
+        _push(`<div class="flex flex-col sm:gap-2"><h4 class="font-bold uppercase text-white text-base text-leading-tracking mb-[15px] opacity-80">${ssrInterpolate(menu.name)}</h4><!--[-->`);
         ssrRenderList(menu.items, (item, key) => {
           _push(ssrRenderComponent(unref(Link), {
             style: !menu.external ? null : { display: "none" },
@@ -909,7 +939,8 @@ const _sfc_main$f = /* @__PURE__ */ Object.assign({ layout: _sfc_main$s }, {
       _push(`<div class="z-10 h-full">`);
       _push(ssrRenderComponent(_sfc_main$m, {
         title: "Group 7024",
-        click: () => unref(router).visit("/")
+        click: () => unref(router).visit("/"),
+        "back-click": () => unref(router).visit("/#companies")
       }, null, _parent));
       _push(`<div class="grid lg:grid-cols-[181px_1fr] h-full">`);
       _push(ssrRenderComponent(_sfc_main$l, {
@@ -1285,7 +1316,8 @@ const _sfc_main$8 = {
       _push(`<div class="z-10 h-full">`);
       _push(ssrRenderComponent(_sfc_main$m, {
         click: scrollToPreviousSection,
-        "is-index": true
+        "is-index": true,
+        "back-click": scrollToPreviousSection
       }, null, _parent));
       _push(`<div class="grid lg:grid-cols-[181px_1fr] h-full">`);
       _push(ssrRenderComponent(_sfc_main$l, {
@@ -1491,13 +1523,13 @@ const _sfc_main$4 = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between flex-col xl:flex-row border-b border-dark-border" }, _attrs))}><div class="flex flex-col justify-between basis-[50.05%]"><div class="flex flex-col gap-[30px] border-r border-r-dark-border px-[20px] py-[40px] md:px-[40px]"><h2 class="uppercase text-xl sm:text-3xl md:text-4xl text-white">${ssrInterpolate(__props.title)}</h2><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">${ssrInterpolate(__props.description)}</p></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex justify-between flex-col xl:flex-row border-b border-dark-border" }, _attrs))}><div class="flex flex-col justify-between basis-[50.05%]"><div class="flex flex-col gap-[30px] px-[20px] py-[40px] md:px-[40px]"><h2 class="uppercase text-xl sm:text-3xl md:text-4xl text-white">${ssrInterpolate(__props.title)}</h2><p class="text-sm sm:text-base md:text-lg text-white opacity-80 leading-[150%] tracking-[2px]">${ssrInterpolate(__props.description)}</p></div>`);
       _push(ssrRenderComponent(_sfc_main$p, {
         name: "Смотреть все",
         link: "",
         class: "pb-[15px] border-b border-b-dark-border"
       }, null, _parent));
-      _push(`</div><div class="flex flex-col justify-between basis-[50%] px-[20px] md:px-[40px] py-[40px] xl:m-0"><div class="h-full md:h-[464px] w-full xl:w-[710px]"><img${ssrRenderAttr("src", unref(exampleImage))} alt="Пример" class="h-full w-full object-cover object-left xl:object-center block rounded xl:rounded-none"></div></div></div>`);
+      _push(`</div><div class="flex flex-col justify-between basis-[50%] xl:m-0"><div class="h-full md:h-[464px] w-full xl:w-[710px]"><img${ssrRenderAttr("src", unref(exampleImage))} alt="Пример" class="h-full w-full object-cover object-left xl:object-center block rounded xl:rounded-none"></div></div></div>`);
     };
   }
 };
@@ -1525,7 +1557,8 @@ const _sfc_main$3 = /* @__PURE__ */ Object.assign({ layout: _sfc_main$s }, {
       _push(`<div class="z-10 h-full">`);
       _push(ssrRenderComponent(_sfc_main$m, {
         title: "Group 7024",
-        click: () => unref(router).visit("/")
+        click: () => unref(router).visit("/"),
+        "back-click": () => unref(router).visit("/#companies")
       }, null, _parent));
       _push(`<div class="grid lg:grid-cols-[181px_1fr] h-full">`);
       _push(ssrRenderComponent(_sfc_main$l, {
@@ -1710,7 +1743,8 @@ const _sfc_main = /* @__PURE__ */ Object.assign({ layout: _sfc_main$s }, {
       _push(`<div class="z-10 h-full">`);
       _push(ssrRenderComponent(_sfc_main$m, {
         title: "Group 7024",
-        click: () => unref(router).visit("/")
+        click: () => unref(router).visit("/"),
+        "back-click": () => unref(router).visit("/#companies")
       }, null, _parent));
       _push(`<div class="grid lg:grid-cols-[181px_1fr] h-full">`);
       _push(ssrRenderComponent(_sfc_main$l, {
@@ -1741,12 +1775,16 @@ const __vite_glob_0_14 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   __proto__: null,
   default: _sfc_main
 }, Symbol.toStringTag, { value: "Module" }));
+const Ziggy = { "url": "https://localhost:8080", "port": 8080, "defaults": {}, "routes": { "moonshine.login": { "uri": "admin/login", "methods": ["GET", "HEAD"] }, "moonshine.authenticate": { "uri": "admin/authenticate", "methods": ["POST"] }, "moonshine.logout": { "uri": "admin/logout", "methods": ["GET", "HEAD"] }, "moonshine.profile.store": { "uri": "admin/profile", "methods": ["POST"] }, "moonshine.index": { "uri": "admin", "methods": ["GET", "HEAD"] }, "moonshine.update-field.through-column": { "uri": "admin/update-field/column/{resourceUri}/{resourceItem}", "methods": ["PUT"], "parameters": ["resourceUri", "resourceItem"] }, "moonshine.update-field.through-relation": { "uri": "admin/update-field/relation/{resourceUri}/{pageUri}/{resourceItem}", "methods": ["PUT"], "parameters": ["resourceUri", "pageUri", "resourceItem"] }, "moonshine.async-search": { "uri": "admin/async-search/{pageUri}/{resourceUri?}/{resourceItem?}", "methods": ["GET", "HEAD"], "parameters": ["pageUri", "resourceUri", "resourceItem"] }, "moonshine.notifications.readAll": { "uri": "admin/notifications", "methods": ["GET", "HEAD"] }, "moonshine.notifications.read": { "uri": "admin/notifications/{notification}", "methods": ["GET", "HEAD"], "parameters": ["notification"] }, "moonshine.component": { "uri": "admin/component/{pageUri}/{resourceUri?}", "methods": ["GET", "HEAD"], "parameters": ["pageUri", "resourceUri"] }, "moonshine.method": { "uri": "admin/method/{pageUri}/{resourceUri?}", "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], "parameters": ["pageUri", "resourceUri"] }, "moonshine.reactive": { "uri": "admin/reactive/{pageUri}/{resourceUri?}/{resourceItem?}", "methods": ["POST"], "parameters": ["pageUri", "resourceUri", "resourceItem"] }, "moonshine.has-many.form": { "uri": "admin/has-many/form/{pageUri}/{resourceUri?}/{resourceItem?}", "methods": ["GET", "HEAD"], "parameters": ["pageUri", "resourceUri", "resourceItem"] }, "moonshine.has-many.list": { "uri": "admin/has-many/list/{pageUri}/{resourceUri?}/{resourceItem?}", "methods": ["GET", "HEAD"], "parameters": ["pageUri", "resourceUri", "resourceItem"] }, "moonshine.page": { "uri": "admin/page/{pageUri}", "methods": ["GET", "HEAD"], "parameters": ["pageUri"] }, "moonshine.crud.massDelete": { "uri": "admin/resource/{resourceUri}/crud", "methods": ["DELETE"], "parameters": ["resourceUri"] }, "moonshine.crud.index": { "uri": "admin/resource/{resourceUri}/crud", "methods": ["GET", "HEAD"], "parameters": ["resourceUri"] }, "moonshine.crud.create": { "uri": "admin/resource/{resourceUri}/crud/create", "methods": ["GET", "HEAD"], "parameters": ["resourceUri"] }, "moonshine.crud.store": { "uri": "admin/resource/{resourceUri}/crud", "methods": ["POST"], "parameters": ["resourceUri"] }, "moonshine.crud.show": { "uri": "admin/resource/{resourceUri}/crud/{resourceItem}", "methods": ["GET", "HEAD"], "parameters": ["resourceUri", "resourceItem"] }, "moonshine.crud.edit": { "uri": "admin/resource/{resourceUri}/crud/{resourceItem}/edit", "methods": ["GET", "HEAD"], "parameters": ["resourceUri", "resourceItem"] }, "moonshine.crud.update": { "uri": "admin/resource/{resourceUri}/crud/{resourceItem}", "methods": ["PUT", "PATCH"], "parameters": ["resourceUri", "resourceItem"] }, "moonshine.crud.destroy": { "uri": "admin/resource/{resourceUri}/crud/{resourceItem}", "methods": ["DELETE"], "parameters": ["resourceUri", "resourceItem"] }, "moonshine.handler": { "uri": "admin/resource/{resourceUri}/handler/{handlerUri}", "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], "parameters": ["resourceUri", "handlerUri"] }, "moonshine.resource.page": { "uri": "admin/resource/{resourceUri}/{pageUri}/{resourceItem?}", "methods": ["GET", "HEAD"], "parameters": ["resourceUri", "pageUri", "resourceItem"] }, "index": { "uri": "/", "methods": ["GET", "HEAD"] }, "studio": { "uri": "studio", "methods": ["GET", "HEAD"] }, "dilesta": { "uri": "dilesta", "methods": ["GET", "HEAD"] }, "module": { "uri": "module", "methods": ["GET", "HEAD"] }, "create": { "uri": "application/create", "methods": ["POST"] }, "storage.local": { "uri": "storage/{path}", "methods": ["GET", "HEAD"], "wheres": { "path": ".*" }, "parameters": ["path"] }, "moonshine.": { "uri": "admin/{fallbackPlaceholder}", "methods": ["GET", "HEAD"], "wheres": { "fallbackPlaceholder": ".*" }, "parameters": ["fallbackPlaceholder"] } } };
+if (typeof window !== "undefined" && typeof window.Ziggy !== "undefined") {
+  Object.assign(Ziggy.routes, window.Ziggy.routes);
+}
 createInertiaApp({
   resolve: (name) => {
     const pages = /* @__PURE__ */ Object.assign({ "./Pages/Development.vue": __vite_glob_0_0, "./Pages/Dilesta/Components/About.vue": __vite_glob_0_1, "./Pages/Dilesta/Components/Services.vue": __vite_glob_0_2, "./Pages/Dilesta/Dilesta.vue": __vite_glob_0_3, "./Pages/Errors/Error.vue": __vite_glob_0_4, "./Pages/Index/Components/CompaniesSection.vue": __vite_glob_0_5, "./Pages/Index/Components/GroupSection.vue": __vite_glob_0_6, "./Pages/Index/Components/TitleComponent.vue": __vite_glob_0_7, "./Pages/Index/Index.vue": __vite_glob_0_8, "./Pages/Module/Components/About.vue": __vite_glob_0_9, "./Pages/Module/Components/Example.vue": __vite_glob_0_10, "./Pages/Module/Module.vue": __vite_glob_0_11, "./Pages/Studio/Components/About.vue": __vite_glob_0_12, "./Pages/Studio/Components/Services.vue": __vite_glob_0_13, "./Pages/Studio/Studio.vue": __vite_glob_0_14 });
     return pages[`./Pages/${name}.vue`];
   },
   setup({ el, App, props, plugin }) {
-    createApp({ render: () => h(App, props) }).use(plugin).use(MotionPlugin).use(ToastPlugin).mount(el);
+    createApp({ render: () => h(App, props) }).use(plugin).use(MotionPlugin).use(ToastPlugin).use(Ziggy, ZiggyVue).mount(el);
   }
 });

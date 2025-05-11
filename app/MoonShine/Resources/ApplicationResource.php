@@ -58,8 +58,8 @@ class ApplicationResource extends ModelResource
                 Text::make('Телефон', 'phone'),
                 Select::make('Сайт', 'type', fn(Application $item) => ApplicationTypeEnum::tryFrom($item->type)?->label())
                     ->options(ApplicationTypeEnum::options()),
-                Select::make('Статус', 'status', fn(Application $item) => ApplicationTypeEnum::tryFrom($item->status)?->label())
-                    ->options(ApplicationTypeEnum::options()),
+                Select::make('Статус', 'status', fn(Application $item) => ApplicationStatusEnum::tryFrom($item->status)?->label())
+                    ->options(ApplicationStatusEnum::options()),
                 Text::make('IP', 'ip'),
                 Json::make('Данные', 'data'),
             ])

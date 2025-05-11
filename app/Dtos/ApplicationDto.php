@@ -4,7 +4,7 @@ namespace App\Dtos;
 
 use App\Enums\ApplicationTypeEnum;
 
-final class ApplicationDto
+final readonly class ApplicationDto
 {
     public function __construct(
         public string                 $name,

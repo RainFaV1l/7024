@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\IndexController;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 Route::group([
     'name' => 'index',
@@ -22,8 +22,14 @@ Route::group([
 ], function () {
     Route::controller(ApplicationController::class)->group(function () {
         Route::post('create', 'create')->name('create');
-        Route::post('webhook', 'webhook')->name('webhook');
+        Route::post('{secret}/webhook', 'handle')->name('webhook');
     });
 });
 
-
+Route::get('/ip', function (Request $request) {
+    var_dump([
+        'remote_addr' => $request->server('REMOTE_ADDR'),
+        'client_ip'   => $request->ip(),
+        'all_ips'     => $request->getClientIps(),
+    ]);
+});

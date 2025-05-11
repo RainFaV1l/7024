@@ -4,7 +4,6 @@ use App\Http\Middleware\HandleInertiaRequests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -18,12 +17,17 @@ return Application::configure(basePath: dirname(__DIR__))
             HandleInertiaRequests::class,
         ]);
         $middleware->trustProxies(
-            at: explode(',', env('TRUSTED_PROXIES', '172.23.0.0/16')),
+            at: [
+                '192.168.0.0/16',
+                '172.17.0.0/16',
+                '10.0.0.0/8',
+                '127.0.0.1',
+            ],
             headers: Request::HEADER_X_FORWARDED_FOR
-        | Request::HEADER_X_FORWARDED_HOST
-        | Request::HEADER_X_FORWARDED_PORT
-        | Request::HEADER_X_FORWARDED_PROTO,            // какие заголовки доверять
         );
+        $middleware->validateCsrfTokens(except: [
+            'webhook/telegram',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
 //        $exceptions->respond(function (Response $response, Throwable $exception, \Illuminate\Http\Request $request) {
