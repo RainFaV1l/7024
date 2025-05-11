@@ -42,7 +42,7 @@ onMounted(() => {
         </video>
         <video
             ref="loaderVideo"
-            class="h-[70%] sm:w-full sm:h-full object-cover md:hidden"
+            class="w-full h-full object-cover md:hidden"
             autoplay
             muted
             playsinline

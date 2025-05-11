@@ -9,6 +9,7 @@ import {useToast} from "vue-toast-notification";
 const checked = ref(true)
 const page = usePage()
 const toast = useToast()
+const errors = ref([])
 
 const form = reactive({
     name: '',
@@ -16,9 +17,35 @@ const form = reactive({
     type: page.props.type,
 })
 
+const validator = () => {
+    if(form.name === '') {
+        errors.value.push({
+            field: 'name',
+            message: 'Поле имя обязательно для заполнения.',
+        })
+    }
+
+    if(form.phone === '') {
+        errors.value.push({
+            field: 'phone',
+            message: 'Поле телефон обязательно для заполнения.'
+        })
+    }
+
+    else {
+        errors.value = []
+    }
+}
+
 const submit = async () => {
     if (!checked.value) {
         toast.error('Согласитесь с нашими условиями.', {duration: 3000})
+        return
+    }
+
+    validator()
+
+    if(errors.value.length !== 0) {
         return
     }
 
@@ -27,7 +54,8 @@ const submit = async () => {
 
         toast.success('Заявка отправлена!', {duration: 8000})
 
-        Object.assign(form, {name: '', phone: ''})
+        Object.assign(form, { name: '', phone: '' })
+
     } catch (error) {
         if (error.response.status === 422) {
             toast.error('Заполните поля корректно', {duration: 3000})
@@ -56,8 +84,14 @@ const submit = async () => {
             <div class="px-[20px] md:px-[40px] md:pb-[40px]">
                 <form class="flex flex-col items-start gap-[40px]" @submit.prevent="submit">
                     <div class="flex flex-col md:flex-row items-center gap-[30px] w-full max-w-full md:max-w-[85%]">
-                        <InputComponent placeholder="Имя" v-model="form.name"/>
-                        <InputComponent placeholder="Телефон" v-model="form.phone" type="tel"/>
+                        <div class="flex flex-col gap-2 w-full">
+                            <InputComponent placeholder="Имя" v-model="form.name" :error="errors?.[0]?.field === 'name'"/>
+                            <p class="text-red-500 text-sm" v-show="errors?.[0]?.field === 'name'">{{ errors?.[0]?.message }}</p>
+                        </div>
+                        <div class="flex flex-col gap-2 w-full">
+                            <InputComponent placeholder="Телефон" v-model="form.phone" type="tel" :error="errors?.[1]?.field === 'phone'"/>
+                            <p class="text-red-500 text-sm" v-show="errors?.[0]?.field === 'name'">{{ errors?.[0]?.message }}</p>
+                        </div>
                     </div>
                     <div class="flex items-center gap-[15px]">
                         <div class="inline-flex items-center cursor-pointer">

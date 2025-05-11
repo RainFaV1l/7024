@@ -2,15 +2,12 @@
 import App from "@/Layouts/App.vue";
 import HeaderComponent from "@/Components/HeaderComponent.vue";
 import Sidebar from "@/Components/Sidebar.vue";
-import { router } from '@inertiajs/vue3'
+import {router} from '@inertiajs/vue3'
 import Circle from "@/Components/Circle.vue";
 import Title from "@/Components/Title.vue";
 import About from "@/Pages/Dilesta/Components/About.vue";
 import Services from "@/Pages/Dilesta/Components/Services.vue";
-import {
-    PhotoIcon, RocketLaunchIcon, HomeModernIcon
-
-} from "@heroicons/vue/24/outline/index.js";
+import {HomeModernIcon, PhotoIcon, RocketLaunchIcon} from "@heroicons/vue/24/outline/index.js";
 import Application from "@/Components/Application.vue";
 import FooterComponent from "@/Components/FooterComponent.vue";
 
@@ -47,7 +44,7 @@ const services = [
     <div class="relative bg-dilesta-dark">
         <Circle/>
         <div class="z-10 h-full">
-            <HeaderComponent title="Group 7024" :click="() => router.visit('/')"/>
+            <HeaderComponent title="Group 7024" :click="() => router.visit('/')" :back-click="() => router.visit('/#companies')"/>
             <div class="grid lg:grid-cols-[181px_1fr] h-full">
                 <Sidebar :click="() => router.visit('/#companies')"/>
                 <div class="flex flex-col w-full">

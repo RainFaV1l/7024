@@ -16,9 +16,9 @@ defineProps({
 </script>
 
 <template>
-    <div class="relative hidden lg:flex flex-col justify-start w-[181px]">
+    <div class="relative hidden lg:flex flex-col justify-start w-[182px]">
         <div :class="isIndex ? 'absolute' : 'fixed'" class="h-full flex flex-col justify-start">
-            <div class="absolute bg-white opacity-10 h-full right-[0px] w-px"></div>
+            <div class="absolute bg-white opacity-10 h-full right-[-3px] w-px"></div>
             <div class="flex items-start justify-start flex-col gap-[60px] p-[50px]">
                 <div class="block cursor-pointer" @click="click">
                     <svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg">

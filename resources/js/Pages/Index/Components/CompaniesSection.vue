@@ -4,7 +4,8 @@ import HeaderComponent from "@/Components/HeaderComponent.vue";
 import gsap from "gsap";
 import Sidebar from "@/Components/Sidebar.vue";
 import {
-    BuildingOfficeIcon, CameraIcon,
+    BuildingOfficeIcon,
+    CameraIcon,
     GlobeAltIcon,
     HomeModernIcon,
     PhotoIcon,
@@ -57,7 +58,7 @@ const scrollToPreviousSection = () => {
     <section class="relative lg:h-dvh bg-dark overflow-hidden section" id="companies">
         <Circle/>
         <div class="z-10 h-full">
-            <HeaderComponent :click="scrollToPreviousSection" :is-index="true"/>
+            <HeaderComponent :click="scrollToPreviousSection" :is-index="true" :back-click="scrollToPreviousSection"/>
             <div class="grid lg:grid-cols-[181px_1fr] h-full">
                 <Sidebar :click="scrollToPreviousSection" :is-index="true"/>
                 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 p-[20px] md:p-[40px] gap-[20px] md:gap-[30px] h-[87%] w-full">
