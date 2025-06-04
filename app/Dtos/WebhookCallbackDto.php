@@ -17,7 +17,7 @@ final readonly class WebhookCallbackDto
     {
         return [
             'application_id' => $this->applicationId,
-            'status' => $this->status->value,
+            'application_status' => $this->status->value,
         ];
     }
 

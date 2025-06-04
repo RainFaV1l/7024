@@ -62,7 +62,7 @@ readonly class TelegramService implements BotContract
                         ['text' => '❌ Отклонить', 'callback_data' => (
                             new WebhookCallbackDto(
                                 applicationId: $applicationEntity->id,
-                                status: ApplicationStatusEnum::APPROVED
+                                status: ApplicationStatusEnum::REJECTED
                             ))->toJson()
                         ],
                     ],
@@ -89,10 +89,11 @@ readonly class TelegramService implements BotContract
 
         \Log::info(json_encode($update, JSON_THROW_ON_ERROR));
 
-        $webhookCallbackDto = WebhookCallbackMapper::convert($update['callback_query']['data']);
+        $webhookData = json_decode($update['callback_query']['data'], true, 512, JSON_THROW_ON_ERROR);
+        $webhookCallbackDto = WebhookCallbackMapper::convert($webhookData);
 
         try {
-            $application = Application::query()->find($webhookCallbackDto->applicationId)->firstOrFail();
+            $application = Application::query()->findOrFail($webhookCallbackDto->applicationId);
 
             $application->update([
                 'status' => $webhookCallbackDto->status->value,
@@ -111,7 +112,7 @@ readonly class TelegramService implements BotContract
                 'parse_mode' => 'Markdown',
             ]);
         } catch (ModelNotFoundException $exception) {
-            \Log::warning("Application not found", ['id' => $dto->applicationId ?? null]);
+            \Log::warning("Application not found", ['id' => $webhookCallbackDto->applicationId]);
         } catch (\Throwable $e) {
             report($e);
         }
